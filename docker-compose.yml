@@ -20,6 +20,7 @@ services:
       - POSTGRES_PASSWORD=demo
       - ALEXANDRIA_DB_PASSWORD=alexandria
       - EMEIS_DB_PASSWORD=emeis
+      - CALUMA_DB_PASSWORD=caluma
     volumes:
       - ./db_setup/init-db.sh:/docker-entrypoint-initdb.d/init-db.sh:ro
       - dbdata:/var/lib/postgresql/data
@@ -83,6 +84,21 @@ services:
       mc admin trace --all --verbose dc-minio;"
     depends_on:
       - minio
+
+  caluma:
+    image: projectcaluma/caluma:latest
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+    environment:
+      - ENV=development
+      - DATABASE_HOST=db
+      - DATABASE_USER=caluma
+      - DATABASE_PASSWORD=caluma
+      - SECRET_KEY=caluma
+      - ALLOWED_HOSTS=*
+      - STATIC_ROOT=""
 
 volumes:
   dbdata:

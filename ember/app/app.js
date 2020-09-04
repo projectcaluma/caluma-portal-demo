@@ -33,6 +33,18 @@ export default class App extends Application {
           ],
         },
       },
+      emberCaluma: {
+        dependencies: {
+          services: [
+            "apollo",
+            "notification",
+            "router",
+            "intl",
+            "caluma-options",
+            "validator",
+          ],
+        },
+      },
     };
   }
 }
