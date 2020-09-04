@@ -1,0 +1,7 @@
+mutation($form: ID!) {
+  saveDocument(input: { form: $form }) {
+    document {
+      id
+    }
+  }
+}

@@ -1,0 +1,131 @@
+{{#if (and this.fetchDocuments.isRunning (eq this.documents.length 0))}}
+  <div class="uk-text-center uk-padding">
+    <UkSpinner @ratio={{2}} />
+  </div>
+{{else if this.documents.length}}
+  <h1 class="uk-flex uk-flex-between">
+    {{t "documents.title"}}
+
+    <span>
+      <LinkTo @route="documents.new" class="uk-button uk-button-primary">
+        {{t "documents.new.title"}}
+      </LinkTo>
+    </span>
+  </h1>
+
+  <hr />
+  <div uk-grid>
+    <div class="uk-width-expand uk-flex uk-flex-middle uk-text-meta">
+      <span>
+        {{
+          t
+          "documents.pageInfo"
+          length=this.documents.length
+          total=this.pageInfo.totalCount
+          htmlSafe=true
+        }}
+      </span>
+    </div>
+
+    <div class="uk-width-auto uk-flex uk-flex-middle">
+      <label class="uk-text-meta uk-text-nowrap" for="order">
+        {{t "documents.orderBy"}}:
+      </label>
+      <select
+        class="uk-select uk-form-small uk-margin-small-left"
+        id="order"
+        {{on "change" this.updateOrder}}
+      >
+        {{#each this.orderOptions as |orderOption|}}
+          <option
+            value={{orderOption.value}}
+            selected={{eq this.order orderOption.value}}
+          >
+            {{t orderOption.label}} ({{t orderOption.direction}})
+          </option>
+        {{/each}}
+      </select>
+    </div>
+  </div>
+  <table class="uk-table uk-table-striped uk-table-hover uk-table-responsive">
+    <thead>
+      <tr>
+        <th class="uk-text-nowrap">
+          {{t "documents.type"}}
+        </th>
+        <th class="uk-text-nowrap">
+          {{t "documents.created"}}
+        </th>
+        <th class="uk-text-nowrap">
+          {{t "documents.description"}}
+        </th>
+      </tr>
+    </thead>
+    <tbody class="uk-overflow-auto">
+      {{#each this.documents as |document|}}
+        <tr class="uk-table-middle">
+          <td>
+            <LinkTo
+              @route="documents.detail.index"
+              @model={{document.id}}
+              class="uk-text-bold uk-text-primary"
+            >
+              {{document.form.name}}
+            </LinkTo>
+          </td>
+
+          <td>
+            {{
+              if
+              document.createdAt
+              (moment-format document.createdAt "DD.MM.YYYY")
+            }}
+          </td>
+
+          <td class="uk-text-truncate" title={{document.description}}>
+            {{document.form.description}}
+          </td>
+        </tr>
+      {{/each}}
+      {{#if this.pageInfo.hasNextPage}}
+        <tr>
+          <td
+            colspan="8"
+            class="uk-text-center"
+            {{in-viewport
+              onEnter=(perform this.fetchDocuments this.pageInfo.endCursor)
+            }}
+          >
+            <UkSpinner />
+          </td>
+        </tr>
+      {{/if}}
+    </tbody>
+  </table>
+{{else}}
+  <div class="uk-width-2-3 uk-margin-auto">
+    <h1 class="uk-text-center">
+      {{t "documents.empty.welcome" appName="Building Permit Demo"}}
+    </h1>
+
+    <p
+      class="uk-text-center uk-text-large uk-margin-large-top uk-margin-medium-bottom"
+    >
+      {{t "documents.empty.no-documents"}}
+    </p>
+
+    <div class="uk-flex uk-flex-center">
+      <div
+        class="uk-flex uk-flex-middle uk-margin-small-left uk-margin-small-right"
+      >
+        <LinkTo
+          @route="documents.new"
+          class="uk-button uk-button-default uk-width-medium uk-height-medium uk-flex uk-flex-middle uk-flex-center uk-flex-column"
+        >
+          <UkIcon @icon="plus" @ratio="3" class="uk-margin" />
+          {{t "documents.new.title"}}
+        </LinkTo>
+      </div>
+    </div>
+  </div>
+{{/if}}

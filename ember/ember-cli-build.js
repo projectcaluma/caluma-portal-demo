@@ -1,17 +1,27 @@
-'use strict';
+"use strict";
 
-const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+const EmberApp = require("ember-cli/lib/broccoli/ember-app");
 
-module.exports = function(defaults) {
+module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
-    // Add options here
+    sourcemaps: { enabled: true },
+    "ember-cli-babel": {
+      includePolyfill: true,
+    },
+
     sassOptions: {
       includePaths: [
         // For some reason sass cant find these on its own :/
         "node_modules/ember-power-select/app/styles/",
-        "node_modules/ember-basic-dropdown/app/styles/"
-      ]
-    }
+        "node_modules/ember-basic-dropdown/app/styles/",
+      ],
+    },
+    emberApolloClient: {
+      keepGraphqlFileExtension: false,
+    },
+    "ember-fetch": {
+      preferNative: true,
+    },
   });
 
   // Use `app.import` to add additional libraries to the generated

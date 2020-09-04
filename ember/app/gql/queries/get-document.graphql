@@ -1,0 +1,22 @@
+query GetDocuments(
+  $id: ID!
+) {
+  allDocuments(
+    filter: [
+      { id: $id }
+    ]
+  ) {
+    edges {
+      node {
+           id
+          createdAt
+          modifiedAt
+          form {
+            slug
+            name
+            description
+          }
+        }
+    }
+  }
+}

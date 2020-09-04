@@ -1,0 +1,31 @@
+query GetDocuments(
+  $cursor: String
+  $forms: [ID]
+  $orderBy: [DocumentOrdering]!
+) {
+  allDocuments(
+    first: 15
+    after: $cursor
+    orderBy: $orderBy
+    filter: [
+      { forms: $forms }
+    ]
+  ) {
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+    totalCount
+    edges {
+      node {
+          id
+          createdAt
+          form {
+            slug
+            name
+            description
+          }
+        }
+    }
+  }
+}
