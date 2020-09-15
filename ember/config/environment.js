@@ -1,8 +1,8 @@
 "use strict";
 
 module.exports = function (environment) {
-  let ENV = {
-    modulePrefix: "ember-caluma-building-permit-demo",
+  const ENV = {
+    modulePrefix: "caluma-portal-demo",
     environment,
     rootURL: "/",
     locationType: "auto",
@@ -22,6 +22,73 @@ module.exports = function (environment) {
       // when it is created
       navBarLogo: "/assets/nav-bar-logo.png",
       navBarText: "Clauma Building Permit Demo",
+
+      caseStateIcons: {
+        RUNNING: "clock",
+        CANCELED: "ban",
+        COMPLETED: "check",
+      },
+
+      casesTable: {
+        defaultOrder: "CREATED_AT_DESC",
+        orderOptions: [
+          {
+            value: "CREATED_AT_DESC",
+            label: "documents.createdAt",
+            direction: "documents.desc",
+          },
+          {
+            value: "CREATED_AT_ASC",
+            label: "documents.createdAt",
+            direction: "documents.asc",
+          },
+          {
+            value: "MODIFIED_AT_DESC",
+            label: "documents.modifiedAt",
+            direction: "documents.desc",
+          },
+          {
+            value: "MODIFIED_AT_ASC",
+            label: "documents.modifiedAt",
+            direction: "documents.asc",
+          },
+        ],
+      },
+
+      dynamicTable: {
+        classList: [], // class list for table element
+        columns: [
+          {
+            classList: [], // class list for td element
+            heading: {
+              label: "documents.type",
+              classList: [], // class list for th element
+            },
+            modelKey: "document.form.name",
+            linkTo: "cases.detail.index",
+          },
+          {
+            heading: { label: "documents.status" },
+            modelKey: "status",
+            type: "case-status",
+          },
+          {
+            heading: { label: "documents.createdAt" },
+            modelKey: "createdAt",
+            type: "date",
+          },
+          {
+            heading: { label: "documents.modifiedAt" },
+            modelKey: "modifiedAt",
+            type: "date",
+          },
+          {
+            heading: { label: "documents.description" },
+            modelKey: "document.form.description",
+            truncate: true,
+          },
+        ],
+      },
     },
 
     apollo: {

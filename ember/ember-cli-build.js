@@ -1,9 +1,10 @@
 "use strict";
 
+//eslint-disable-next-line node/no-missing-require, node/no-unpublished-require
 const EmberApp = require("ember-cli/lib/broccoli/ember-app");
 
 module.exports = function (defaults) {
-  let app = new EmberApp(defaults, {
+  const app = new EmberApp(defaults, {
     sourcemaps: { enabled: true },
     "ember-cli-babel": {
       includePolyfill: true,

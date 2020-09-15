@@ -1,0 +1,67 @@
+[
+  {
+    "fields": {
+      "created_at": "2020-08-10T14:30:14.806Z",
+      "created_by_group": null,
+      "created_by_user": null,
+      "modified_at": "2020-08-10T14:30:14.806Z",
+      "next": "['start', 'publication', 'end']|tasks"
+    },
+    "model": "caluma_workflow.flow",
+    "pk": "240e43d1-3969-41e6-8f25-f27fa1751592"
+  },
+  {
+    "fields": {
+      "created_at": "2020-08-10T14:27:54.985Z",
+      "created_by_group": null,
+      "created_by_user": null,
+      "description": "{\"de\": null, \"fr\": null}",
+      "form": null,
+      "is_archived": false,
+      "is_multiple_instance": false,
+      "lead_time": null,
+      "meta": {},
+      "modified_at": "2020-08-10T14:27:54.985Z",
+      "name": "{\"de\": \"Stellungnahme verfassen\", \"fr\": null}",
+      "type": "simple"
+    },
+    "model": "caluma_workflow.task",
+    "pk": "start"
+  },
+  {
+    "fields": {
+      "created_at": "2020-08-10T14:27:54.985Z",
+      "created_by_group": null,
+      "created_by_user": null,
+      "description": "{\"de\": null, \"fr\": null}",
+      "form": null,
+      "is_archived": false,
+      "is_multiple_instance": false,
+      "lead_time": null,
+      "meta": {},
+      "modified_at": "2020-08-10T14:27:54.985Z",
+      "name": "{\"de\": \"Stellungnahme verfassen\", \"fr\": null}",
+      "type": "simple"
+    },
+    "model": "caluma_workflow.task",
+    "pk": "publication"
+  },
+  {
+    "fields": {
+      "created_at": "2020-08-10T14:27:54.985Z",
+      "created_by_group": null,
+      "created_by_user": null,
+      "description": "{\"de\": null, \"fr\": null}",
+      "form": null,
+      "is_archived": false,
+      "is_multiple_instance": false,
+      "lead_time": null,
+      "meta": {},
+      "modified_at": "2020-08-10T14:27:54.985Z",
+      "name": "{\"de\": \"Stellungnahme verfassen\", \"fr\": null}",
+      "type": "simple"
+    },
+    "model": "caluma_workflow.task",
+    "pk": "end"
+  }
+]

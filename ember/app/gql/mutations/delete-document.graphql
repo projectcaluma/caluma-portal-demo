@@ -1,7 +1,0 @@
-mutation($document: ID!){
-  removeDocument(input: { document: $document }) {
-    document {
-      id
-    }
-  }
-}

@@ -2,14 +2,22 @@ version: "3"
 services:
 
   ember:
-    build: ./ember/
+    image: danlynn/ember-cli:latest
     volumes:
-      - ./ember/dist:/usr/share/nginx/html
+      - ./ember:/myapp
+      - ./ember/node_modules/:/myapp/node_modules
+    tmpfs:
+      - /myapp/tmp
+    ports:
+      - "4200:4200"
+      - "7020:7020"
+      - "7357:7357"
+    command: ember serve --proxy http://proxy
 
   proxy:
     image: nginx:1.15-alpine
     volumes:
-      - ./proxy/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./config/proxy/nginx.conf:/etc/nginx/conf.d/default.conf:ro
     ports:
       - "8080:80"
 
@@ -22,7 +30,7 @@ services:
       - EMEIS_DB_PASSWORD=emeis
       - CALUMA_DB_PASSWORD=caluma
     volumes:
-      - ./db_setup/init-db.sh:/docker-entrypoint-initdb.d/init-db.sh:ro
+      - ./config/db_setup/init-db.sh:/docker-entrypoint-initdb.d/init-db.sh:ro
       - dbdata:/var/lib/postgresql/data
 
   emeis:
@@ -42,7 +50,7 @@ services:
   alexandria:
     image: projectcaluma/alexandria
     volumes:
-        - "./alexandria/initial_data.json:/app/initial_data.json"
+        - "./config/alexandria/initial_data.json:/app/initial_data.json"
     depends_on:
       - db
       - minio
@@ -99,8 +107,11 @@ services:
       - SECRET_KEY=caluma
       - ALLOWED_HOSTS=*
       - STATIC_ROOT=""
+    volumes:
+      - ./config/caluma/:/app/setup/
 
 volumes:
   dbdata:
   minio_data:
+  node_modules:
 

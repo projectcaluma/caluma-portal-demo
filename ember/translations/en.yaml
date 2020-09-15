@@ -19,11 +19,12 @@ documents:
 
   pageInfo: "Showing {length} of {total} documents"
   orderBy: "Order by"
-  created: "Created"
-  modified: "Last updated"
+  createdAt: "Created"
+  modifiedAt: "Last updated"
   desc: "Desc"
   asc: "Asc"
   description: "Description"
+  status: "Status"
 
   general: "General information"
 
@@ -32,6 +33,11 @@ documents:
   editText: "You can modify the document and change your previous data."
   delete: "Delete document"
   deleteText: "You can delete the document if its not needed anymore."
+
+  states:
+    RUNNING: "Running"
+    CANCELED: "Canceled"
+    COMPLETED: "Completed"
 
   new:
     title: "Create a new document"

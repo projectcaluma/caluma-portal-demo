@@ -5154,19 +5154,6 @@ ember-alexandria@velrest/ember-alexandria#test:
     ember-uikit "^2.1.2"
     file-saver "^2.0.2"
 
-ember-apollo-client@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/ember-apollo-client/-/ember-apollo-client-2.1.0.tgz#5fa7aede785a848a40dc02df5a5b3d8a57b8a79b"
-  integrity sha512-3jtErkhhZB8oSrW57TLzWRG2xDSjDSBG4gfnrldvY0LnGfAORwx1FHqDUgMrT4ve+nRzELIgCQ1aBecxZg3eqA==
-  dependencies:
-    apollo-cache-inmemory "^1.6.5"
-    apollo-client "^2.6.8"
-    apollo-link-context "^1.0.18"
-    apollo-link-http "^1.5.15"
-    broccoli-graphql-filter "^0.4.1"
-    ember-auto-import "^1.5.3"
-    ember-cli-babel "^7.18.0"
-
 ember-apollo-client@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/ember-apollo-client/-/ember-apollo-client-2.2.0.tgz#59198f0eceb72893a151c99ee79ac3ba3bd7f583"
@@ -5266,42 +5253,44 @@ ember-basic-dropdown@^3.0.3:
     ember-maybe-in-element "^2.0.1"
     ember-truth-helpers "2.1.0"
 
-ember-caluma@^6.1.2:
-  version "6.1.2"
-  resolved "https://registry.yarnpkg.com/ember-caluma/-/ember-caluma-6.1.2.tgz#e0fafe779aa58eac443aaef067967c4d546167c0"
-  integrity sha512-gpq259ceXpU3Lo1mckTeyJvz6Yj3mw+2m+jqnaXb1NY7XFyRXlqRjiiVuf2FJL+L5A53HRzkGeck4ffbwuc87Q==
+ember-caluma@^6.2.1:
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/ember-caluma/-/ember-caluma-6.2.1.tgz#d17455ca75cb9a025449fd58d37542783b4a0559"
+  integrity sha512-k5nyD+9h5FK08Kh/0Tw6BqUQ0a0UGoL0zwkyV2OpjI81wYRxaIN5t5LB8C7BExKSf5hszWllki8p5M92mVqfNg==
   dependencies:
+    "@glimmer/tracking" "^1.0.1"
     apollo-cache-inmemory "^1.6.6"
     apollo-link-context "^1.0.20"
     broccoli-funnel "^3.0.3"
     broccoli-merge-trees "^4.2.0"
-    ember-apollo-client "2.1.0"
+    ember-apollo-client "^2.2.0"
     ember-auto-import "^1.6.0"
     ember-changeset "^2.2.5"
     ember-changeset-validations "^2.2.1"
-    ember-cli-babel "^7.21.0"
-    ember-cli-htmlbars "^5.2.0"
+    ember-cli-babel "^7.22.1"
+    ember-cli-htmlbars "^5.3.1"
     ember-cli-sass "^10.0.0"
     ember-cli-showdown "^4.5.0"
     ember-cli-string-helpers "^5.0.0"
     ember-composable-helpers "^4.2.2"
     ember-concurrency "^1.2.1"
-    ember-fetch "^8.0.1"
-    ember-intl "^5.3.1"
+    ember-fetch "^8.0.2"
+    ember-intl "^5.4.2"
     ember-math-helpers "^2.15.0"
     ember-power-select "^4.0.3"
     ember-test-selectors "^4.1.0"
     ember-uikit "^2.1.2"
     ember-validated-form "^2.0.0"
-    graphql "^14.7.0"
+    graphql "^15.3.0"
     graphql-iso-date "^3.6.1"
-    graphql-tag "^2.10.4"
-    graphql-tools "^4.0.7"
+    graphql-tag "^2.11.0"
+    graphql-tools "^4.0.8"
     jexl "^2.2.0"
     lodash.clonedeep "^4.5.0"
+    moment "2.24.0"
     sass "^1.26.10"
-    slugify "^1.4.4"
-    uuid "^8.2.0"
+    slugify "^1.4.5"
+    uuid "^8.3.0"
 
 ember-changeset-validations@^2.2.1:
   version "2.2.1"
@@ -5823,6 +5812,16 @@ ember-composable-helpers@^4.2.2:
     ember-cli-babel "^7.11.1"
     resolve "^1.10.0"
 
+ember-composable-helpers@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/ember-composable-helpers/-/ember-composable-helpers-4.3.0.tgz#afe03e14e20639652bed86b84d91633ede2cb129"
+  integrity sha512-nunPGP3RTf1KbnTzZLcp9/EXBSbOPVs36lVxjxbcW+yo9DV8QRy/kayNJfiU5X5sYf8rLsVs1w0qcFR8exQfxg==
+  dependencies:
+    "@babel/core" "^7.0.0"
+    broccoli-funnel "2.0.1"
+    ember-cli-babel "^7.11.1"
+    resolve "^1.10.0"
+
 ember-concurrency-decorators@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/ember-concurrency-decorators/-/ember-concurrency-decorators-1.0.0.tgz#b327e9e487650f0670870a8233c35bd0b5a7452b"
@@ -5997,7 +5996,7 @@ ember-fetch@^6.3.1:
     node-fetch "^2.6.0"
     whatwg-fetch "^3.0.0"
 
-ember-fetch@^8.0.1:
+ember-fetch@^8.0.1, ember-fetch@^8.0.2:
   version "8.0.2"
   resolved "https://registry.yarnpkg.com/ember-fetch/-/ember-fetch-8.0.2.tgz#9838b9f01e33fcd23550ccf38ae4f1f90cc47113"
   integrity sha512-BMwm8jLP5LCeT8Jbgz0jA04RsRyt06ZGMaC3Tx2DbHgoWOPlLMfkEKlCFE0dZVW8ZhuICKuyRZTzt4e8GrnnNA==
@@ -7855,12 +7854,12 @@ graphql-iso-date@^3.6.1:
   resolved "https://registry.yarnpkg.com/graphql-iso-date/-/graphql-iso-date-3.6.1.tgz#bd2d0dc886e0f954cbbbc496bbf1d480b57ffa96"
   integrity sha512-AwFGIuYMJQXOEAgRlJlFL4H1ncFM8n8XmoVDTNypNOZyQ8LFDG2ppMFlsS862BSTCDcSUfHp8PD3/uJhv7t59Q==
 
-graphql-tag@^2.10.0, graphql-tag@^2.10.4:
+graphql-tag@^2.10.0, graphql-tag@^2.11.0:
   version "2.11.0"
   resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.11.0.tgz#1deb53a01c46a7eb401d6cb59dec86fa1cccbffd"
   integrity sha512-VmsD5pJqWJnQZMUeRwrDhfgoyqcfwEkvtpANqcoUG8/tOLkwNgU9mzub/Mc78OJMhHjx7gfAMTxzdG43VGg3bA==
 
-graphql-tools@^4.0.7:
+graphql-tools@^4.0.8:
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/graphql-tools/-/graphql-tools-4.0.8.tgz#e7fb9f0d43408fb0878ba66b522ce871bafe9d30"
   integrity sha512-MW+ioleBrwhRjalKjYaLQbr+920pHBgy9vM/n47sswtns8+96sRn5M/G+J1eu7IMeKWiN/9p6tmwCHU7552VJg==
@@ -7871,12 +7870,17 @@ graphql-tools@^4.0.7:
     iterall "^1.1.3"
     uuid "^3.1.0"
 
-graphql@^14.0.2, graphql@^14.7.0:
+graphql@^14.0.2:
   version "14.7.0"
   resolved "https://registry.yarnpkg.com/graphql/-/graphql-14.7.0.tgz#7fa79a80a69be4a31c27dda824dc04dac2035a72"
   integrity sha512-l0xWZpoPKpppFzMfvVyFmp9vLN7w/ZZJPefUicMCepfJeQ8sMcztloGYY9DfjVPo6tIUDzU5Hw3MUbIjj9AVVA==
   dependencies:
     iterall "^1.2.2"
+
+graphql@^15.3.0:
+  version "15.3.0"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-15.3.0.tgz#3ad2b0caab0d110e3be4a5a9b2aa281e362b5278"
+  integrity sha512-GTCJtzJmkFLWRfFJuoo9RWWa/FfamUHgiFosxi/X1Ani4AVWbeyBenZTNX6dM+7WSbbFfTo/25eh0LLkwHMw2w==
 
 growly@^1.3.0:
   version "1.3.0"
@@ -9631,6 +9635,11 @@ moment-timezone@^0.5.13:
   integrity sha512-+GgHNg8xRhMXfEbv81iDtrVeTcWt0kWmTEY1XQK14dICTXnWJnT0dxdlPspwqF3keKMVPXwayEsk1DI0AA/jdA==
   dependencies:
     moment ">= 2.9.0"
+
+moment@2.24.0:
+  version "2.24.0"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
+  integrity sha512-bV7f+6l2QigeBBZSM/6yTNq4P2fNpSWj/0e7jQcy87A8e7o2nAfP/34/2ky5Vw4B9S446EtIhodAzkFCcR4dQg==
 
 "moment@>= 2.9.0", moment@^2.19.3:
   version "2.27.0"
@@ -11516,7 +11525,7 @@ slice-ansi@^2.1.0:
     astral-regex "^1.0.0"
     is-fullwidth-code-point "^2.0.0"
 
-slugify@^1.4.4:
+slugify@^1.4.5:
   version "1.4.5"
   resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.4.5.tgz#a7517acf5f4c02a4df41e735354b660a4ed1efcf"
   integrity sha512-WpECLAgYaxHoEAJ8Q1Lo8HOs1ngn7LN7QjXgOLbmmfkcWvosyk4ZTXkTzKyhngK640USTZUlgoQJfED1kz5fnQ==
@@ -12658,7 +12667,7 @@ uuid@^7.0.2:
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-7.0.3.tgz#c5c9f2c8cf25dc0a372c4df1441c41f5bd0c680b"
   integrity sha512-DPSke0pXhTZgoF/d+WSt2QaKMCFSfx7QegxEWT+JOuHF5aWrKEn0G+ztjuJg/gG8/ItK+rbPCD/yNv8yyih6Cg==
 
-uuid@^8.2.0:
+uuid@^8.3.0:
   version "8.3.0"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.0.tgz#ab738085ca22dc9a8c92725e459b1d507df5d6ea"
   integrity sha512-fX6Z5o4m6XsXBdli9g7DtWgAx+osMsRRZFKma1mIUsLCz6vRvv+pz5VNbyu9UEDzpMWulZfvpgb/cmDXVulYFQ==
