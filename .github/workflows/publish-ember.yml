@@ -1,0 +1,27 @@
+name: Publish Ember Docker
+on:
+  push:
+    branches:
+      - main
+
+env:
+  ember-dir: ./ember
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout branch
+      uses: actions/checkout@v2
+    - name: build app
+      run: yarn build
+      working-directory: ${{ember-dir}}
+    - name: Publish to Docker Hub
+      uses: docker/build-push-action@v1.1.0
+      with:
+        repository: projectcaluma/caluma-portal-demo
+        tag_with_ref: true
+        path: caluma-portal-demo
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        context: ./ember/

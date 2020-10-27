@@ -1,0 +1,62 @@
+name: Test Ember
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "./ember/**/*"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "./ember/**/*"
+
+env:
+  CI: true
+  ember-dir: ./ember
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 10
+
+      - name: Install Dependencies
+        run: yarn install
+        working-directory: ${{ember-dir}}
+
+      - name: Lint JS & Handlebars
+        run: yarn lint
+        working-directory: ${{ember-dir}}
+
+  test:
+    name: Tests
+    needs: [lint]
+    runs-on: [ubuntu-latest]
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 10
+
+      - name: Install dependencies (no lockfile)
+        run: yarn install --no-lockfile
+        working-directory: ${{ember-dir}}
+
+      - name: Run tests (floating dependencies)
+        run: yarn test:ember
+        working-directory: ${{ember-dir}}
+
+      - name: Install dependencies
+        run: yarn install
+        working-directory: ${{ember-dir}}
+
+      - name: Run tests
+        run: yarn test:ember
+        working-directory: ${{ember-dir}}
