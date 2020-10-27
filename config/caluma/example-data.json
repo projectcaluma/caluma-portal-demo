@@ -1,0 +1,237 @@
+[
+  {
+    "model": "caluma_form.form",
+    "pk": "with-sub-form",
+    "fields": {
+      "created_at": "2020-09-15T08:57:34.451Z",
+      "modified_at": "2020-09-15T09:07:52.180Z",
+      "created_by_user": null,
+      "created_by_group": null,
+      "name": "{\"en\": \"With Subform\"}",
+      "description": "{\"en\": null}",
+      "meta": {},
+      "is_published": true,
+      "is_archived": false,
+      "source": null
+    }
+  },
+  {
+    "model": "caluma_form.form",
+    "pk": "form",
+    "fields": {
+      "created_at": "2020-09-15T08:54:36.359Z",
+      "modified_at": "2020-09-15T09:07:42.968Z",
+      "created_by_user": null,
+      "created_by_group": null,
+      "name": "{\"en\": \"Form\"}",
+      "description": "{\"en\": null}",
+      "meta": {},
+      "is_published": true,
+      "is_archived": false,
+      "source": null
+    }
+  },
+  {
+    "model": "caluma_form.formquestion",
+    "pk": "with-sub-form.name",
+    "fields": {
+      "created_at": "2020-09-15T08:57:46.590Z",
+      "modified_at": "2020-09-15T08:57:46.590Z",
+      "created_by_user": null,
+      "created_by_group": null,
+      "form": "with-sub-form",
+      "question": "name",
+      "sort": 2
+    }
+  },
+  {
+    "model": "caluma_form.formquestion",
+    "pk": "with-sub-form.sub-form",
+    "fields": {
+      "created_at": "2020-09-15T08:58:03.288Z",
+      "modified_at": "2020-09-15T08:58:03.288Z",
+      "created_by_user": null,
+      "created_by_group": null,
+      "form": "with-sub-form",
+      "question": "sub-form",
+      "sort": 1
+    }
+  },
+  {
+    "model": "caluma_form.formquestion",
+    "pk": "form.contact",
+    "fields": {
+      "created_at": "2020-09-15T08:54:57.091Z",
+      "modified_at": "2020-09-15T08:54:57.091Z",
+      "created_by_user": null,
+      "created_by_group": null,
+      "form": "form",
+      "question": "contact",
+      "sort": 1
+    }
+  },
+  {
+    "model": "caluma_form.question",
+    "pk": "contact",
+    "fields": {
+      "created_at": "2020-09-15T08:54:56.991Z",
+      "modified_at": "2020-09-15T08:54:56.991Z",
+      "created_by_user": null,
+      "created_by_group": null,
+      "label": "{\"en\": \"Kontaktdaten\"}",
+      "type": "text",
+      "is_required": "true",
+      "is_hidden": "false",
+      "is_archived": false,
+      "placeholder": "{\"en\": null}",
+      "info_text": "{\"en\": null}",
+      "static_content": "{\"en\": \"\"}",
+      "configuration": { "max_length": null, "min_length": null },
+      "meta": {},
+      "data_source": null,
+      "row_form": null,
+      "sub_form": null,
+      "source": null,
+      "format_validators": "[]"
+    }
+  },
+  {
+    "model": "caluma_form.question",
+    "pk": "name",
+    "fields": {
+      "created_at": "2020-09-15T08:57:46.451Z",
+      "modified_at": "2020-09-15T08:57:46.451Z",
+      "created_by_user": null,
+      "created_by_group": null,
+      "label": "{\"en\": \"Name\"}",
+      "type": "text",
+      "is_required": "true",
+      "is_hidden": "false",
+      "is_archived": false,
+      "placeholder": "{\"en\": null}",
+      "info_text": "{\"en\": null}",
+      "static_content": "{\"en\": \"\"}",
+      "configuration": { "max_length": null, "min_length": null },
+      "meta": {},
+      "data_source": null,
+      "row_form": null,
+      "sub_form": null,
+      "source": null,
+      "format_validators": "[]"
+    }
+  },
+  {
+    "model": "caluma_form.question",
+    "pk": "sub-form",
+    "fields": {
+      "created_at": "2020-09-15T08:58:03.189Z",
+      "modified_at": "2020-09-15T08:58:03.189Z",
+      "created_by_user": null,
+      "created_by_group": null,
+      "label": "{\"en\": \"Sub Form\"}",
+      "type": "form",
+      "is_required": "true",
+      "is_hidden": "false",
+      "is_archived": false,
+      "placeholder": "{\"en\": null}",
+      "info_text": "{\"en\": null}",
+      "static_content": "{\"en\": \"\"}",
+      "configuration": {},
+      "meta": {},
+      "data_source": null,
+      "row_form": null,
+      "sub_form": "form",
+      "source": null,
+      "format_validators": "[]"
+    }
+  },
+  {
+    "model": "caluma_workflow.task",
+    "pk": "end",
+    "fields": {
+      "created_at": "2020-08-10T14:27:54.985Z",
+      "modified_at": "2020-08-10T14:27:54.985Z",
+      "created_by_user": null,
+      "created_by_group": null,
+      "name": "{\"en\": \"End\"}",
+      "description": "{\"en\": null}",
+      "type": "simple",
+      "meta": {},
+      "address_groups": null,
+      "control_groups": null,
+      "is_archived": false,
+      "form": null,
+      "lead_time": null,
+      "is_multiple_instance": false
+    }
+  },
+  {
+    "model": "caluma_workflow.task",
+    "pk": "publication",
+    "fields": {
+      "created_at": "2020-08-10T14:27:54.985Z",
+      "modified_at": "2020-08-10T14:27:54.985Z",
+      "created_by_user": null,
+      "created_by_group": null,
+      "name": "{\"en\": \"Publication\"}",
+      "description": "{\"en\": null}",
+      "type": "simple",
+      "meta": {},
+      "address_groups": null,
+      "control_groups": null,
+      "is_archived": false,
+      "form": null,
+      "lead_time": null,
+      "is_multiple_instance": false
+    }
+  },
+  {
+    "model": "caluma_workflow.task",
+    "pk": "start",
+    "fields": {
+      "created_at": "2020-08-10T14:27:54.985Z",
+      "modified_at": "2020-08-10T14:27:54.985Z",
+      "created_by_user": null,
+      "created_by_group": null,
+      "name": "{\"en\": \"Start\"}",
+      "description": "{\"en\": null}",
+      "type": "simple",
+      "meta": {},
+      "address_groups": null,
+      "control_groups": null,
+      "is_archived": false,
+      "form": null,
+      "lead_time": null,
+      "is_multiple_instance": false
+    }
+  },
+  {
+    "model": "caluma_workflow.workflow",
+    "pk": "demo-flow",
+    "fields": {
+      "created_at": "2020-09-15T09:04:12.955Z",
+      "modified_at": "2020-09-15T09:04:12.955Z",
+      "created_by_user": null,
+      "created_by_group": null,
+      "name": "{\"en\": \"Demo flow\"}",
+      "description": "{\"en\": null}",
+      "meta": {},
+      "is_published": false,
+      "is_archived": false,
+      "allow_all_forms": true,
+      "start_tasks": ["end", "publication", "start"],
+      "allow_forms": []
+    }
+  },
+  {
+    "model": "caluma_workflow.flow",
+    "pk": "240e43d1-3969-41e6-8f25-f27fa1751592",
+    "fields": {
+      "created_at": "2020-08-10T14:30:14.806Z",
+      "modified_at": "2020-08-10T14:30:14.806Z",
+      "created_by_user": null,
+      "created_by_group": null,
+      "next": "['start', 'publication', 'end']|tasks"
+    }
+  }
+]
