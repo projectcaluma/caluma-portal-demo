@@ -62,7 +62,7 @@
     "ember-promise-helpers": "^1.0.9",
     "ember-qunit": "^4.6.0",
     "ember-resolver": "^8.0.0",
-    "ember-source": "~3.18.0",
+    "ember-source": "~3.23.0",
     "ember-template-lint": "^2.6.0",
     "ember-uikit": "^2.1.2",
     "eslint": "^7.7.0",
