@@ -1,11 +1,5 @@
-query GetCases(
-  $caseId: ID!
-) {
-  allCases(
-    filter: [
-      { rootCase: $caseId }
-    ]
-  ) {
+query GetCases($caseId: ID!) {
+  allCases(filter: [{ rootCase: $caseId }]) {
     edges {
       node {
         id
