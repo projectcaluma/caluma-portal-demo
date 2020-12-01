@@ -1,5 +1,5 @@
-query($slug: String){
-  allWorkflows(slug: $slug){
+query($slug: String) {
+  allWorkflows(slug: $slug) {
     edges {
       node {
         id
