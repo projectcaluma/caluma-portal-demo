@@ -33,6 +33,6 @@ jobs:
     - name: Publish to Docker Hub
       uses: docker/build-push-action@v2.2.0
       with:
-        file: ./ember/Dockerfile
+        contect: ./ember
         tags: projectcaluma/caluma-portal-demo:latest
         push: true
