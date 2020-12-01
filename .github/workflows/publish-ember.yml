@@ -34,5 +34,6 @@ jobs:
       uses: docker/build-push-action@v2.2.0
       with:
         context: ./ember
+        file: ./ember/Dockerfile
         tags: projectcaluma/caluma-portal-demo:latest
         push: true
