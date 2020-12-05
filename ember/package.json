@@ -65,7 +65,7 @@
     "ember-source": "~3.18.0",
     "ember-template-lint": "^2.6.0",
     "ember-uikit": "^2.1.2",
-    "eslint": "^7.7.0",
+    "eslint": "^7.15.0",
     "eslint-plugin-ember": "^8.11.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-node": "^11.1.0",
