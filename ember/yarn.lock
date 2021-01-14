@@ -1520,7 +1520,7 @@
     ember-cli-version-checker "^3.1.3"
     ember-compatibility-helpers "^1.1.2"
 
-"@glimmer/component@^1.0.1", "@glimmer/component@^1.0.2", "@glimmer/component@^1.0.3":
+"@glimmer/component@1.0.3", "@glimmer/component@^1.0.1", "@glimmer/component@^1.0.2", "@glimmer/component@^1.0.3":
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@glimmer/component/-/component-1.0.3.tgz#38c26fc4855fd7ad0e0816d18d80d32c578e5140"
   integrity sha512-GD3gcN+Pr2flmxkt2lm5K86jwX+KRD9QQpNH+wiEQGjBXOzd46+XD5npH1sRByqLYml9rW4klflcrEfNb7dnQw==
@@ -5780,12 +5780,13 @@ ember-basic-dropdown@^3.0.11:
     ember-maybe-in-element "^2.0.1"
     ember-truth-helpers "^2.1.0 || ^3.0.0"
 
-ember-caluma@^6.6.1:
-  version "6.6.1"
-  resolved "https://registry.yarnpkg.com/ember-caluma/-/ember-caluma-6.6.1.tgz#7646c963f14f97d3358c51294a9b3afbf923389c"
-  integrity sha512-QICmeWLMtfL8r2/n97RXXDbWyw0tcKp/gWtga7fX4LU5osizxe46oDQhjVRCnqj2RCUL3RBB4tuTEOIeut/3+g==
+ember-caluma@^6.7.0:
+  version "6.7.0"
+  resolved "https://registry.yarnpkg.com/ember-caluma/-/ember-caluma-6.7.0.tgz#36fe0d1773eec105e308517e1f4d841408ed9818"
+  integrity sha512-HiHPXnhnp1LtVa3DK7MsR++0bm7qny5cviloAHO/tHnIlCjFLbSfy06av7jIpODveco7C27tLjtRZgb58hNdDA==
   dependencies:
     "@ember/render-modifiers" "^1.0.2"
+    "@glimmer/component" "1.0.3"
     "@glimmer/tracking" "^1.0.1"
     apollo-cache-inmemory "^1.6.6"
     apollo-link-context "^1.0.20"
@@ -5793,8 +5794,8 @@ ember-caluma@^6.6.1:
     broccoli-merge-trees "^4.2.0"
     ember-apollo-client "^2.2.0"
     ember-auto-import "^1.7.0"
-    ember-changeset "^3.10.2"
-    ember-changeset-validations "^3.10.0"
+    ember-changeset "^3.10.5"
+    ember-changeset-validations "^3.10.3"
     ember-cli-babel "^7.23.0"
     ember-cli-htmlbars "^5.3.1"
     ember-cli-sass "^10.0.0"
@@ -5818,30 +5819,30 @@ ember-caluma@^6.6.1:
     lodash.isequal "^4.5.0"
     moment "2.24.0"
     proxy-polyfill "^0.3.2"
-    sass "^1.29.0"
+    sass "^1.32.4"
     slugify "^1.4.6"
     uuid "^8.3.1"
 
-ember-changeset-validations@^3.10.0:
-  version "3.10.2"
-  resolved "https://registry.yarnpkg.com/ember-changeset-validations/-/ember-changeset-validations-3.10.2.tgz#2fcc3ce3ef278fba66228d935e791004599ac9ab"
-  integrity sha512-PBRqlZThEghujdeeMAPDMvQIzJJDqMJjyz35SWeXZwl+Gzs2lgaRDLwTGEANZVoumDAPAjvdE/1kEdfyotM9pw==
+ember-changeset-validations@^3.10.3:
+  version "3.10.3"
+  resolved "https://registry.yarnpkg.com/ember-changeset-validations/-/ember-changeset-validations-3.10.3.tgz#b767e23307c0e97c92b78b9da90248d90c28aa97"
+  integrity sha512-UPGNosQ2mXLFuGG4GDBOMi2VTtOsNB9gEXnJ4qqqlXrteHF9hZJR8ZtbekF9mmSGojTJJXSXx++hnX1fzB+j7A==
   dependencies:
-    ember-changeset "^3.10.4"
+    ember-changeset "^3.10.5"
     ember-cli-babel "^7.8.0"
     ember-cli-htmlbars "^4.0.5"
     ember-get-config "^0.2.4"
     ember-validators "^3.0.1"
 
-ember-changeset@^3.10.2, ember-changeset@^3.10.4:
-  version "3.10.4"
-  resolved "https://registry.yarnpkg.com/ember-changeset/-/ember-changeset-3.10.4.tgz#692589fc9b96b59d86c11abec331af54c9633c53"
-  integrity sha512-UdiiT/ApRfqQMgaP9kkmHIZIpny5lIDlLHouGf5RUkTAhrcE3XWd43vDYZi3U3fGFbIBQIVu004bthdBvo2m4Q==
+ember-changeset@^3.10.5:
+  version "3.10.5"
+  resolved "https://registry.yarnpkg.com/ember-changeset/-/ember-changeset-3.10.5.tgz#a639cfa7f2208416cfcf41300e48ecee2e097397"
+  integrity sha512-RU1Tah2OryM2ivnkhCq1KIC46/BY5sham06GsAc+81dTaTWMgH05rQ503+5PhY7x3uNa4vLlY4A3zxFNJVFfmg==
   dependencies:
     "@glimmer/tracking" "^1.0.1"
     ember-auto-import "^1.5.2"
     ember-cli-babel "^7.19.0"
-    validated-changeset "~0.10.4"
+    validated-changeset "~0.10.5"
 
 ember-class-based-modifier@^0.10.0:
   version "0.10.0"
@@ -11854,7 +11855,7 @@ sane@^4.0.0, sane@^4.1.0:
     minimist "^1.1.1"
     walker "~1.0.5"
 
-sass@^1.29.0, sass@^1.32.4:
+sass@^1.32.4:
   version "1.32.4"
   resolved "https://registry.yarnpkg.com/sass/-/sass-1.32.4.tgz#308bf29dd7f53d44ae4f06580e9a910ad9aa411e"
   integrity sha512-N0BT0PI/t3+gD8jKa83zJJUb7ssfQnRRfqN+GIErokW6U4guBpfYl8qYB+OFLEho+QvnV5ZH1R9qhUC/Z2Ch9w==
@@ -13234,10 +13235,10 @@ validate-npm-package-name@^3.0.0:
   dependencies:
     builtins "^1.0.3"
 
-validated-changeset@~0.10.4:
-  version "0.10.4"
-  resolved "https://registry.yarnpkg.com/validated-changeset/-/validated-changeset-0.10.4.tgz#dcb3961f4e974eeb9430804f657b6f8eae84d5dd"
-  integrity sha512-05opaR2iE5XohmARGnMM04lx7xIQDiT3wxkvAQrT7Ix7EhmAHSWkFZbigoQ6iSLyERAaUw5IL593a5rUWkyFQg==
+validated-changeset@~0.10.5:
+  version "0.10.5"
+  resolved "https://registry.yarnpkg.com/validated-changeset/-/validated-changeset-0.10.5.tgz#6305e88a7cc248e2d9211cecfdc40da9604c1437"
+  integrity sha512-mj2SBZXzF92JEfTVjFWaCkiPJkj+sccDap8JYTu/qIQXQt1zm7bZCxpfXU5VAJ/bIpbIxBVBSi4HTqouse0ATg==
 
 vary@~1.1.2:
   version "1.1.2"
