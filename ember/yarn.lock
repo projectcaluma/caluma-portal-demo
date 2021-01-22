@@ -5739,10 +5739,10 @@ ember-basic-dropdown@^3.0.11:
     ember-maybe-in-element "^2.0.1"
     ember-truth-helpers "^2.1.0 || ^3.0.0"
 
-ember-caluma@^6.7.0:
-  version "6.7.0"
-  resolved "https://registry.yarnpkg.com/ember-caluma/-/ember-caluma-6.7.0.tgz#36fe0d1773eec105e308517e1f4d841408ed9818"
-  integrity sha512-HiHPXnhnp1LtVa3DK7MsR++0bm7qny5cviloAHO/tHnIlCjFLbSfy06av7jIpODveco7C27tLjtRZgb58hNdDA==
+ember-caluma@^6.8.0:
+  version "6.8.0"
+  resolved "https://registry.yarnpkg.com/ember-caluma/-/ember-caluma-6.8.0.tgz#9526b2de30141d8d2378194daae37c83b8636dfb"
+  integrity sha512-lsQabCvtNtmd2zwBoS5AcusUl6pYJOijmbh9g17SmMHyX9XfXOs4KWTj310dUpsO9K0IBqn5YMzRYs706Ac9hA==
   dependencies:
     "@ember/render-modifiers" "^1.0.2"
     "@glimmer/component" "1.0.3"
@@ -5755,15 +5755,15 @@ ember-caluma@^6.7.0:
     ember-auto-import "^1.7.0"
     ember-changeset "^3.10.5"
     ember-changeset-validations "^3.10.3"
-    ember-cli-babel "^7.23.0"
+    ember-cli-babel "^7.23.1"
     ember-cli-htmlbars "^5.3.1"
     ember-cli-sass "^10.0.0"
     ember-cli-showdown "^4.5.0"
     ember-cli-string-helpers "^5.0.0"
     ember-composable-helpers "^4.4.0"
     ember-concurrency "^1.3.0"
-    ember-fetch "^8.0.2"
-    ember-intl "^5.5.1"
+    ember-fetch "^8.0.4"
+    ember-intl "^5.6.2"
     ember-math-helpers "^2.15.0"
     ember-power-select "^4.1.0"
     ember-test-selectors "^5.0.0"
@@ -5778,7 +5778,7 @@ ember-caluma@^6.7.0:
     lodash.isequal "^4.5.0"
     moment "2.24.0"
     proxy-polyfill "^0.3.2"
-    sass "^1.32.4"
+    sass "^1.32.5"
     slugify "^1.4.6"
     uuid "^8.3.1"
 
@@ -6445,10 +6445,10 @@ ember-fetch@^6.3.1:
     node-fetch "^2.6.0"
     whatwg-fetch "^3.0.0"
 
-ember-fetch@^8.0.1, ember-fetch@^8.0.2:
-  version "8.0.2"
-  resolved "https://registry.yarnpkg.com/ember-fetch/-/ember-fetch-8.0.2.tgz#9838b9f01e33fcd23550ccf38ae4f1f90cc47113"
-  integrity sha512-BMwm8jLP5LCeT8Jbgz0jA04RsRyt06ZGMaC3Tx2DbHgoWOPlLMfkEKlCFE0dZVW8ZhuICKuyRZTzt4e8GrnnNA==
+ember-fetch@^8.0.1, ember-fetch@^8.0.4:
+  version "8.0.4"
+  resolved "https://registry.yarnpkg.com/ember-fetch/-/ember-fetch-8.0.4.tgz#b9a3239e9d188ada18a4448ccb4fea2a091e3952"
+  integrity sha512-vx/v6+OTZMDbm6BT5TI6Q/NSuaWPbQxb2KRDD4yR/iJoRl2DtfgXiCA491pYT5IwAAtp6NbMa1CitIQDoaII9Q==
   dependencies:
     abortcontroller-polyfill "^1.4.0"
     broccoli-concat "^4.2.4"
@@ -6459,9 +6459,9 @@ ember-fetch@^8.0.1, ember-fetch@^8.0.2:
     broccoli-templater "^2.0.1"
     calculate-cache-key-for-tree "^2.0.0"
     caniuse-api "^3.0.0"
-    ember-cli-babel "^7.19.0"
+    ember-cli-babel "^7.23.0"
     ember-cli-typescript "^3.1.3"
-    node-fetch "^2.6.0"
+    node-fetch "^2.6.1"
     whatwg-fetch "^3.4.0"
 
 ember-focus-trap@0.5.0:
@@ -6544,10 +6544,10 @@ ember-inflector@^3.0.1:
   dependencies:
     ember-cli-babel "^6.6.0"
 
-ember-intl@^5.5.0, ember-intl@^5.5.1:
-  version "5.5.1"
-  resolved "https://registry.yarnpkg.com/ember-intl/-/ember-intl-5.5.1.tgz#a6c951ae1a87791bca9f0028d20521d2cb583ccf"
-  integrity sha512-RK8HuJmwZFMduZB2kSYqwB41NBgNJP8bwtiEVVXI0YyWLZ33R+jpHtjwP1YJZ6fTXtJaEcOptXoEGt5IjKfJvg==
+ember-intl@^5.5.0, ember-intl@^5.5.1, ember-intl@^5.6.2:
+  version "5.6.2"
+  resolved "https://registry.yarnpkg.com/ember-intl/-/ember-intl-5.6.2.tgz#ece4820923dfda033c279b7e3920cbbc8b6bde07"
+  integrity sha512-+FfI2udVbnEzueompcRb3ytBWhfnBfVVjAwnCuxwqIyS9ti8lK0ZiYHa5bquNPHjjfBzfFl4x5TlVgDNaCnccg==
   dependencies:
     broccoli-caching-writer "^3.0.3"
     broccoli-funnel "^3.0.3"
@@ -10279,7 +10279,7 @@ no-case@^3.0.3:
     lower-case "^2.0.1"
     tslib "^1.10.0"
 
-node-fetch@^2.6.0:
+node-fetch@^2.6.0, node-fetch@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
   integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
@@ -11817,7 +11817,7 @@ sane@^4.0.0, sane@^4.1.0:
     minimist "^1.1.1"
     walker "~1.0.5"
 
-sass@^1.32.4, sass@^1.32.5:
+sass@^1.32.5:
   version "1.32.5"
   resolved "https://registry.yarnpkg.com/sass/-/sass-1.32.5.tgz#2882d22ad5748c05fa9bff6c3b0ffbc4f4b9e1dc"
   integrity sha512-kU1yJ5zUAmPxr7f3q0YXTAd1oZjSR1g3tYyv+xu0HZSl5JiNOaE987eiz7wCUvbm4I9fGWGU2TgApTtcP4GMNQ==
