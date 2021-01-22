@@ -5739,10 +5739,10 @@ ember-basic-dropdown@^3.0.11:
     ember-maybe-in-element "^2.0.1"
     ember-truth-helpers "^2.1.0 || ^3.0.0"
 
-ember-caluma@^6.8.0:
-  version "6.8.0"
-  resolved "https://registry.yarnpkg.com/ember-caluma/-/ember-caluma-6.8.0.tgz#9526b2de30141d8d2378194daae37c83b8636dfb"
-  integrity sha512-lsQabCvtNtmd2zwBoS5AcusUl6pYJOijmbh9g17SmMHyX9XfXOs4KWTj310dUpsO9K0IBqn5YMzRYs706Ac9hA==
+ember-caluma@^6.9.0:
+  version "6.9.0"
+  resolved "https://registry.yarnpkg.com/ember-caluma/-/ember-caluma-6.9.0.tgz#623064f871e37718a4754f311f0bf889ece695b6"
+  integrity sha512-5xIxJnp7wkXjuq0Q5YhgNXS7VcfICIABrj6FjEWmhFHtQZ0SBMgsPbJ1c/1U83gRu/D3Fmczn+RxZW9vcXRImg==
   dependencies:
     "@ember/render-modifiers" "^1.0.2"
     "@glimmer/component" "1.0.3"
