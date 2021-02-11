@@ -5747,10 +5747,10 @@ ember-basic-dropdown@^3.0.12:
     ember-style-modifier "^0.6.0"
     ember-truth-helpers "^2.1.0 || ^3.0.0"
 
-ember-caluma@^6.9.2:
-  version "6.9.2"
-  resolved "https://registry.yarnpkg.com/ember-caluma/-/ember-caluma-6.9.2.tgz#e8dbfeb8f9ef8afb01630c6eadca02a62cabe7c1"
-  integrity sha512-90ipV+3i7c0B+Pwk4nl943naLXVMn25evyltpTbr6eEGoNxZVxR7iWhH2siqqlU5EKmPNOQkeNSGH03xZjBhWA==
+ember-caluma@^6.9.3:
+  version "6.9.3"
+  resolved "https://registry.yarnpkg.com/ember-caluma/-/ember-caluma-6.9.3.tgz#88764713f5791ea1b44adeef3711e5bfb8ae5f57"
+  integrity sha512-zXmnNQF3WxhnFBBmHHMbzNugrDm+sAJmqVZQeBOYVZx58kQKgJHWvl25HPGgpxhoiQDeEq2xsbKk6rCWylroNA==
   dependencies:
     "@ember/render-modifiers" "^1.0.2"
     "@glimmer/component" "1.0.3"
@@ -5761,8 +5761,8 @@ ember-caluma@^6.9.2:
     broccoli-merge-trees "^4.2.0"
     ember-apollo-client "^2.2.0"
     ember-auto-import "^1.7.0"
-    ember-changeset "^3.10.5"
-    ember-changeset-validations "^3.10.3"
+    ember-changeset "^3.12.0"
+    ember-changeset-validations "^3.12.0"
     ember-cli-babel "^7.23.1"
     ember-cli-htmlbars "^5.3.1"
     ember-cli-sass "^10.0.0"
@@ -5790,26 +5790,26 @@ ember-caluma@^6.9.2:
     slugify "^1.4.6"
     uuid "^8.3.1"
 
-ember-changeset-validations@^3.10.3:
-  version "3.10.3"
-  resolved "https://registry.yarnpkg.com/ember-changeset-validations/-/ember-changeset-validations-3.10.3.tgz#b767e23307c0e97c92b78b9da90248d90c28aa97"
-  integrity sha512-UPGNosQ2mXLFuGG4GDBOMi2VTtOsNB9gEXnJ4qqqlXrteHF9hZJR8ZtbekF9mmSGojTJJXSXx++hnX1fzB+j7A==
+ember-changeset-validations@^3.12.0:
+  version "3.13.0"
+  resolved "https://registry.yarnpkg.com/ember-changeset-validations/-/ember-changeset-validations-3.13.0.tgz#e709fcf6a4b1fb2b79a100a69e7d2fd423a52620"
+  integrity sha512-ObxWKgyTXTZbTl4fnNlMllM61s+KPJH0Bjzanfl7NkBGBk60oufy9sdgJOD43m52/sIJjt41gORVLAqvv+JsbA==
   dependencies:
-    ember-changeset "^3.10.5"
+    ember-changeset "^3.12.0"
     ember-cli-babel "^7.8.0"
     ember-cli-htmlbars "^4.0.5"
     ember-get-config "^0.2.4"
     ember-validators "^3.0.1"
 
-ember-changeset@^3.10.5:
-  version "3.10.5"
-  resolved "https://registry.yarnpkg.com/ember-changeset/-/ember-changeset-3.10.5.tgz#a639cfa7f2208416cfcf41300e48ecee2e097397"
-  integrity sha512-RU1Tah2OryM2ivnkhCq1KIC46/BY5sham06GsAc+81dTaTWMgH05rQ503+5PhY7x3uNa4vLlY4A3zxFNJVFfmg==
+ember-changeset@^3.12.0:
+  version "3.12.0"
+  resolved "https://registry.yarnpkg.com/ember-changeset/-/ember-changeset-3.12.0.tgz#f220c27824bf3abbaa8f1b26700794d6df9d0451"
+  integrity sha512-Ae1XkIZW2wFLYV31wuixp4vd7tnU+CkVsX5Q/YKfH+oXy0hm5Zfzse0Kizz4DdOSaSOjtNXUymiXOtwbismS7g==
   dependencies:
     "@glimmer/tracking" "^1.0.1"
     ember-auto-import "^1.5.2"
     ember-cli-babel "^7.19.0"
-    validated-changeset "~0.10.5"
+    validated-changeset "~0.13.1"
 
 ember-class-based-modifier@^0.10.0:
   version "0.10.0"
@@ -13211,10 +13211,10 @@ validate-npm-package-name@^3.0.0:
   dependencies:
     builtins "^1.0.3"
 
-validated-changeset@~0.10.5:
-  version "0.10.5"
-  resolved "https://registry.yarnpkg.com/validated-changeset/-/validated-changeset-0.10.5.tgz#6305e88a7cc248e2d9211cecfdc40da9604c1437"
-  integrity sha512-mj2SBZXzF92JEfTVjFWaCkiPJkj+sccDap8JYTu/qIQXQt1zm7bZCxpfXU5VAJ/bIpbIxBVBSi4HTqouse0ATg==
+validated-changeset@~0.13.1:
+  version "0.13.1"
+  resolved "https://registry.yarnpkg.com/validated-changeset/-/validated-changeset-0.13.1.tgz#cf36dbcfcd18cc0cf92bdfc352e0fed26892a973"
+  integrity sha512-rKc3wPaS6+XPefiGjCqlOrRCtUDw+6CQnUv8AIyzbYSprzWwFAPTeYtWmYzTDBP9G6AENZ34QXszZlMz9INPGw==
 
 vary@~1.1.2:
   version "1.1.2"
