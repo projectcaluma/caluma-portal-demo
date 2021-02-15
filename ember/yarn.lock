@@ -5747,10 +5747,10 @@ ember-basic-dropdown@^3.0.12:
     ember-style-modifier "^0.6.0"
     ember-truth-helpers "^2.1.0 || ^3.0.0"
 
-ember-caluma@^6.9.3:
-  version "6.9.3"
-  resolved "https://registry.yarnpkg.com/ember-caluma/-/ember-caluma-6.9.3.tgz#88764713f5791ea1b44adeef3711e5bfb8ae5f57"
-  integrity sha512-zXmnNQF3WxhnFBBmHHMbzNugrDm+sAJmqVZQeBOYVZx58kQKgJHWvl25HPGgpxhoiQDeEq2xsbKk6rCWylroNA==
+ember-caluma@^6.10.0:
+  version "6.10.0"
+  resolved "https://registry.yarnpkg.com/ember-caluma/-/ember-caluma-6.10.0.tgz#f029aa5f1f33db162eb81fa6b3eab0e87126d087"
+  integrity sha512-M52BRhLZH9s/3kCURHz6lKe6dGh9t3brJXVIlKeDmbWJ8ytwII5f97kKPqPHid5HGP9WnlG2W2/ZTws3p9P5dA==
   dependencies:
     "@ember/render-modifiers" "^1.0.2"
     "@glimmer/component" "1.0.3"
@@ -5762,9 +5762,9 @@ ember-caluma@^6.9.3:
     ember-apollo-client "^2.2.0"
     ember-auto-import "^1.7.0"
     ember-changeset "^3.12.0"
-    ember-changeset-validations "^3.12.0"
+    ember-changeset-validations "^3.13.0"
     ember-cli-babel "^7.23.1"
-    ember-cli-htmlbars "^5.3.1"
+    ember-cli-htmlbars "^5.3.2"
     ember-cli-sass "^10.0.0"
     ember-cli-showdown "^4.5.0"
     ember-cli-string-helpers "^5.0.0"
@@ -5786,11 +5786,11 @@ ember-caluma@^6.9.3:
     lodash.isequal "^4.5.0"
     moment "2.24.0"
     proxy-polyfill "^0.3.2"
-    sass "^1.32.5"
+    sass "^1.32.7"
     slugify "^1.4.6"
     uuid "^8.3.1"
 
-ember-changeset-validations@^3.12.0:
+ember-changeset-validations@^3.13.0:
   version "3.13.0"
   resolved "https://registry.yarnpkg.com/ember-changeset-validations/-/ember-changeset-validations-3.13.0.tgz#e709fcf6a4b1fb2b79a100a69e7d2fd423a52620"
   integrity sha512-ObxWKgyTXTZbTl4fnNlMllM61s+KPJH0Bjzanfl7NkBGBk60oufy9sdgJOD43m52/sIJjt41gORVLAqvv+JsbA==
@@ -11834,7 +11834,7 @@ sane@^4.0.0, sane@^4.1.0:
     minimist "^1.1.1"
     walker "~1.0.5"
 
-sass@^1.32.5, sass@^1.32.7:
+sass@^1.32.7:
   version "1.32.7"
   resolved "https://registry.yarnpkg.com/sass/-/sass-1.32.7.tgz#632a9df2b85dc4b346977fcaf2d5e6f2b7039fd8"
   integrity sha512-C8Z4bjqGWnsYa11o8hpKAuoyFdRhrSHcYjCr+XAWVPSIQqC8mp2f5Dx4em0dKYehPzg5XSekmCjqJnEZbIls9A==
