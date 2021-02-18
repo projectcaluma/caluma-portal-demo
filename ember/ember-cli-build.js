@@ -23,6 +23,11 @@ module.exports = function (defaults) {
     "ember-fetch": {
       preferNative: true,
     },
+    fingerprint: {
+      // disable fingerprinting for images to make sure logo
+      // config path doesn't break in production
+      extensions: ["js", "css", "map"],
+    },
   });
 
   // Use `app.import` to add additional libraries to the generated
