@@ -1,5 +1,4 @@
 import { action } from "@ember/object";
-import { reads } from "@ember/object/computed";
 import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
 import ENV from "caluma-portal-demo/config/environment";
@@ -14,7 +13,9 @@ export default class CasesTableComponent extends Component {
   @tracked types = [];
   @tracked order;
 
-  @reads("fetchCases.lastSuccessful.value.pageInfo") pageInfo;
+  get pageInfo() {
+    return this.fetchCases.lastSuccessful?.value.pageInfo;
+  }
 
   orderOptions = ENV.APP.casesTable.orderOptions;
   dynamicTableConfig = ENV.APP.dynamicTable;
