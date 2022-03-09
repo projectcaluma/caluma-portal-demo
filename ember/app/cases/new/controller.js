@@ -1,12 +1,12 @@
 import Controller from "@ember/controller";
 import { inject as service } from "@ember/service";
 import { tracked } from "@glimmer/tracking";
+import { decodeId } from "@projectcaluma/ember-core/helpers/decode-id";
 import createCaseMutation from "caluma-portal-demo/gql/mutations/create-case";
 import getRootFormsQuery from "caluma-portal-demo/gql/queries/get-root-forms";
 import getWorkflowQuery from "caluma-portal-demo/gql/queries/get-workflow";
 import { queryManager } from "ember-apollo-client";
-import { decodeId } from "ember-caluma/helpers/decode-id";
-import { task, lastValue } from "ember-concurrency-decorators";
+import { task, lastValue } from "ember-concurrency";
 import QueryParams from "ember-parachute";
 
 const queryParams = new QueryParams({
@@ -36,14 +36,16 @@ export default class CaseNewController extends Controller.extend(
   }
 
   @lastValue("fetchForms") forms;
-  @task *fetchForms() {
+  @task
+  *fetchForms() {
     return (yield this.apollo.query(
       { query: getRootFormsQuery, fetchPolicy: "network-only" },
       "allForms.edges"
     )).map(({ node }) => node);
   }
 
-  @task *createCase() {
+  @task
+  *createCase() {
     const workflow = (yield this.apollo.query(
       { query: getWorkflowQuery },
       "allWorkflows.edges"

@@ -76,7 +76,7 @@
       {{t "documents.deleteText"}}
     </p>
     <UkButton
-      @on-click={{perform this.closeCase @model}}
+      @onClick={{perform this.closeCase @model}}
       @disabled={{this.closeCase.isRunning}}
       @loading={{this.closeCase.isRunning}}
     >

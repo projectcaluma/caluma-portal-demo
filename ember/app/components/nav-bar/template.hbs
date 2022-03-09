@@ -1,5 +1,5 @@
 <nav class="uk-navbar-container uk-navbar-transparent nav-bar" uk-navbar>
-  <LinkTo @route="application" class="uk-navbar-item uk-logo uk-text-primary">
+  <LinkTo @route="cases" class="uk-navbar-item uk-logo uk-text-primary">
     {{#if @logo}}
       <img class="nav-bar-logo" src={{@logo}} alt={{@text}} />
     {{else}}
@@ -8,15 +8,17 @@
   </LinkTo>
 
   <div class="uk-navbar-left">
-    <UkTab as |tab|>
-      <tab.link-item @route="cases">
-        <span>
+    <ul class="uk-navbar-nav uk-text-uppercase">
+      <li>
+        <LinkTo @route="cases">
           {{t "nav.documents"}}
-        </span>
-      </tab.link-item>
-      <tab.link-item @route="form-builder">
-        {{t "nav.form-builder"}}
-      </tab.link-item>
-    </UkTab>
+        </LinkTo>
+      </li>
+      <li>
+        <LinkTo @route="form-builder">
+          {{t "nav.form-builder"}}
+        </LinkTo>
+      </li>
+    </ul>
   </div>
 </nav>

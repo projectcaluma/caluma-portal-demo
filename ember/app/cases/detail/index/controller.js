@@ -2,7 +2,7 @@ import Controller from "@ember/controller";
 import { inject as service } from "@ember/service";
 import cancelCaseMutation from "caluma-portal-demo/gql/mutations/cancel-case";
 import { queryManager } from "ember-apollo-client";
-import { task } from "ember-concurrency-decorators";
+import { task } from "ember-concurrency";
 
 export default class CasesDetailIndexController extends Controller {
   @service router;
