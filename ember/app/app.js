@@ -13,13 +13,15 @@ export default class App extends Application {
     super(...args);
 
     this.engines = {
-      emberEmeis: {
+      "ember-emeis": {
         dependencies: {
           services: [
             { store: "emeis-store" },
+            "fetch",
             "intl",
             "notification",
             "router",
+            "emeis-options",
           ],
         },
       },
@@ -34,16 +36,9 @@ export default class App extends Application {
           ],
         },
       },
-      emberCaluma: {
+      "@projectcaluma/ember-form-builder": {
         dependencies: {
-          services: [
-            "apollo",
-            "notification",
-            "router",
-            "intl",
-            "caluma-options",
-            "validator",
-          ],
+          services: ["apollo", "notification", "intl", "caluma-options"],
         },
       },
     };

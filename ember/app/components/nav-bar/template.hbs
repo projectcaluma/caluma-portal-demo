@@ -7,16 +7,8 @@
     {{/if}}
   </LinkTo>
 
-  <div class="uk-navbar-left">
-    <UkTab as |tab|>
-      <tab.link-item @route="cases">
-        <span>
-          {{t "nav.documents"}}
-        </span>
-      </tab.link-item>
-      <tab.link-item @route="form-builder">
-        {{t "nav.form-builder"}}
-      </tab.link-item>
-    </UkTab>
-  </div>
+  <UkTab as |tab|>
+    <tab.item @href="/">{{t "nav.documents"}}</tab.item>
+    <tab.item @href="/form-builder">{{t "nav.form-builder"}}</tab.item>
+  </UkTab>
 </nav>

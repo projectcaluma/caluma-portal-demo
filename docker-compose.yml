@@ -21,7 +21,7 @@ services:
       - dbdata:/var/lib/postgresql/data
 
   emeis:
-    image: projectcaluma/emeis:latest
+    image: ghcr.io/projectcaluma/emeis:1.0.5@sha256:e3a778c3027be4e303e8c53cd6c123fb9cfc6cc7e4db9a3c230b027864e490dd
     depends_on:
       - db
     environment:
@@ -35,7 +35,7 @@ services:
       - LANGUAGES=de,en
 
   alexandria:
-    image: projectcaluma/alexandria
+    image: projectcaluma/alexandria:version-0.2.1@sha256:900785fae96fbfb1d6cbe8efc17258715c9e263596002ff08d863286b0b1d397
     volumes:
         - "./config/alexandria/initial_data.json:/app/initial_data.json"
     depends_on:
@@ -81,7 +81,7 @@ services:
       - minio
 
   caluma:
-    image: projectcaluma/caluma:latest
+    image: ghcr.io/projectcaluma/caluma:7.14.1@sha256:1eab696764cc0c3e3c3ef5289d7a267655c63165fce638aa4ec493ba168cfd80
     depends_on:
       - db
     ports:

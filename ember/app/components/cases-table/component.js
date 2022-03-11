@@ -4,7 +4,7 @@ import { tracked } from "@glimmer/tracking";
 import ENV from "caluma-portal-demo/config/environment";
 import getCasesQuery from "caluma-portal-demo/gql/queries/get-cases";
 import { queryManager } from "ember-apollo-client";
-import { restartableTask } from "ember-concurrency-decorators";
+import { restartableTask } from "ember-concurrency";
 
 export default class CasesTableComponent extends Component {
   @queryManager apollo;

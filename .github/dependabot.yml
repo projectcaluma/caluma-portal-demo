@@ -1,0 +1,26 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 10
+    versioning-strategy: increase
+    ignore:
+      - dependency-name: graphql
+        versions:
+          - ">= 16"
+      # We're not ready yet
+      - dependency-name: ember-source
+        versions:
+          - ">= 4"
+      - dependency-name: ember-cli
+        versions:
+          - ">= 4"
+      - dependency-name: ember-data
+        versions:
+          - ">= 4"
+      # https://github.com/ember-cli/ember-cli/issues/9307
+      - dependency-name: eslint
+        versions:
+          - ">= 8"

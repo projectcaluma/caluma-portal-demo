@@ -11,7 +11,10 @@ export default class Router extends EmberRouter {
 Router.map(function () {
   this.mount("ember-emeis", { as: "emeis", path: "/emeis" });
   this.mount("ember-alexandria", { as: "alexandria", path: "/alexandria" });
-  this.mount("ember-caluma", { as: "form-builder", path: "/form-builder" });
+  this.mount("@projectcaluma/ember-form-builder", {
+    as: "form-builder",
+    path: "/form-builder",
+  });
   this.route("cases", { path: "/" }, function () {
     this.route("detail", { path: "/:id" }, function () {
       this.route("edit");
