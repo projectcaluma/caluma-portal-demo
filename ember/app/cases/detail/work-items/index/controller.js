@@ -1,12 +1,9 @@
 import Controller from "@ember/controller";
 import calumaQuery from "@projectcaluma/ember-core/caluma-query";
 import { allWorkItems } from "@projectcaluma/ember-core/caluma-query/queries";
-import { queryManager } from "ember-apollo-client";
 import { restartableTask } from "ember-concurrency-decorators";
 
 export default class CasesDetailWorkItemsController extends Controller {
-  @queryManager apollo;
-
   @calumaQuery({
     query: allWorkItems,
     options: "options",
@@ -25,20 +22,48 @@ export default class CasesDetailWorkItemsController extends Controller {
     };
   }
 
-  get columns() {
-    return [
-      "task",
-      "instance",
-      "description",
-      ...(this.status === "open"
-        ? ["deadline", "responsible"]
-        : ["closedAt", "closedBy"]),
-    ];
+  get readyTableConfig() {
+    return {
+      columns: [
+        {
+          heading: { label: "workItems.task" },
+          type: "task-name",
+        },
+        {
+          heading: { label: "workItems.deadline" },
+          modelKey: "deadline",
+          type: "date",
+        },
+        {
+          heading: { label: "workItems.actions.title" },
+          type: "work-item-actions",
+        },
+      ],
+    };
+  }
+  get completedTableConfig() {
+    return {
+      columns: [
+        {
+          heading: { label: "workItems.task" },
+          type: "task-name",
+        },
+        {
+          heading: { label: "workItems.closedAt" },
+          modelKey: "closedAt",
+          type: "date",
+        },
+        {
+          heading: { label: "workItems.actions.title" },
+          type: "work-item-actions",
+        },
+      ],
+    };
   }
 
   @restartableTask
   *fetchWorkItems() {
-    const filter = [{ hasDeadline: true }, { case: this.model.id }];
+    const filter = [{ case: this.model.id }];
 
     yield this.readyWorkItemsQuery.fetch({
       filter: [...filter, { status: "READY" }],

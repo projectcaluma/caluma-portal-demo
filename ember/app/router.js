@@ -19,16 +19,12 @@ Router.map(function () {
     this.route("detail", { path: "/:id" }, function () {
       this.route("edit");
       this.route("work-items", function () {
-        this.route("edit", { path: "/:id" }, function () {
+        this.route("edit", { path: "/:work_item_id" }, function () {
           this.route("form");
         });
       });
     });
     this.route("new");
   });
-  this.route("work-items", function () {
-    this.route("detail", { path: "/ :id" }, function () {
-      this.route("edit");
-    });
-  });
+  this.route("work-items");
 });

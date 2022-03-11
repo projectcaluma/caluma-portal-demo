@@ -1,6 +1,4 @@
-<Notifications />
-
-<h1 {{did-insert (perform this.fetchWorkItems)}}>
+<h1>
   {{t "workItems.edit"}}
 </h1>
 
@@ -33,12 +31,6 @@
         hour12=false
       }}
     </div>
-    <div class="work-item-attribute">
-      <span class="work-item-attribute__title">
-        {{t "workItems.comment"}}
-      </span>
-      {{or this.workItem.meta.completion-comment "-"}}
-    </div>
   {{/if}}
 </div>
 
@@ -47,50 +39,26 @@
   {{on "submit" (perform this.saveManualWorkItem)}}
 >
   <div class="uk-margin">
-    <label class="uk-form-label" for="responsible">
-      {{t "workItems.responsible"}}
-    </label>
-    <div class="uk-form-controls">
-      <input
-        class="uk-input"
-        id="responsible"
-        type="text"
-        value={{this.workItem.addressedService.name}}
-        disabled={{true}}
-      >
-    </div>
-  </div>
-
-  <div class="uk-margin">
-    <label class="uk-form-label" for="createdBy">
-      {{t "workItems.createdBy"}}
-    </label>
-    <div class="uk-form-controls">
-      <input
-        class="uk-input"
-        id="createdBy"
-        type="text"
-        value={{this.workItem.createdByUser.fullName}}
-        disabled={{true}}
-      >
-    </div>
-  </div>
-
-  <div class="uk-margin">
     <label class="uk-form-label" for="createdAt">
       {{t "workItems.createdAt"}}
     </label>
     <div class="uk-form-controls">
-      <input class="uk-input" id="createdAt" type="text" value={{
-      format-date
-        this.workItem.createdAt
-        day="2-digit"
-        month="2-digit"
-        year="numeric"
-        hour="2-digit"
-        minute="2-digit"
-        hour12=false
-      }} disabled={{true}}>
+      <input
+        class="uk-input"
+        id="createdAt" 
+        type="text" 
+        value={{
+          format-date
+            this.workItem.createdAt
+            day="2-digit"
+            month="2-digit"
+            year="numeric"
+            hour="2-digit"
+            minute="2-digit"
+            hour12=false
+        }}
+        disabled
+      >
     </div>
   </div>
 
@@ -125,52 +93,24 @@
     </div>
   </div>
 
-  <div class="uk-margin">
-    <div class="uk-form-label">{{t "workItems.notifications"}}</div>
-    <div class="uk-form-controls">
-      <label>
-        <Input
-          class="uk-checkbox"
-          @type="checkbox"
-          @checked={{this.workItem.meta.notify-completed}}
-        />
-        {{t "workItems.notifyCompleted"}}
-      </label>
-      <br />
-      <label>
-        <Input
-          class="uk-checkbox"
-          @type="checkbox"
-          @checked={{this.workItem.meta.notify-deadline}}
-        />
-        {{t "workItems.notifyDeadline"}}
-      </label>
-    </div>
-  </div>
-
   <div class="uk-text-right">
-    <LinkTo
-      @route="work-items.index"
-      class="uk-margin-right"
-    >
-      <UkButton
-        @type="button"
-        @label={{t "global.cancel"}}
-      />
-    </LinkTo>
+    <UkButton
+      @type="button"
+      @label={{t "global.cancel"}}
+      @onClick={{this.cancel}}
+    />
+
     <UkButton
       @type="submit"
       @color="primary"
       @label={{t "global.save"}}
     />
+
+    <UkButton
+      @type="submit"
+      @color="primary"
+      @label={{t "workItems.actions.finish"}}
+      @onClick={{perform this.finishWorkItem}}
+    />
   </div>
 </form>
-
-{{#if this.workItem.canComplete}}
-  <UkButton
-    @type="submit"
-    @color="primary"
-    @label={{t "workItems.actions.finish"}}
-    {{on "click" (perform this.finishWorkItem)}}
-  />
-{{/if}}

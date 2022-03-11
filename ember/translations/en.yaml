@@ -5,6 +5,8 @@ global:
   empty: "No entries found"
   paginationInfo: "<strong>1 - {count}</strong> von {total}"
   openMenu: "Open menu"
+  cancel: "Cancel"
+  save: "Save"
 
 nav:
   emeis: "Emeis"
@@ -53,31 +55,31 @@ documents:
 
   subnav:
     overview: "Overview"
-    workItems: "Tasks"
+    workItems: "work item"
     document: "Document"
 
 workItems:
   name: "Name"
-  title: "Open tasks"
-  completedTitle: "Completed tasks"
+  title: "Open work item"
+  completedTitle: "Completed work item"
   task: "Task"
-  instance: "Document"
+  document: "Document"
   description: "Desciption"
   closedAt: "Completed on"
   closedBy: "Completed by"
   edit: "Edit task"
   responsible: "Responsible"
   deadline: "Deadline"
-  createdBy: "Created on"
-  createdAt: "Created by"
+  createdBy: "Created by"
+  createdAt: "Created on"
   notifications: "Notifications"
   notifyCompleted: "on completion"
   notifyDeadline: "on deadline"
 
   saveSuccess: "Task successfully saved"
   finishSuccess: "Task successfully completed"
-  fetchError: "Error while loading tasks"
-  saveError: "Error while saving the task"
+  fetchError: "Error while loading work item"
+  saveError: "Error while saving the work item"
 
   actions:
     title: "Actions"
@@ -87,7 +89,7 @@ workItems:
     markAsUnread: "Mark as unread"
     assignToMe: "Assign to me"
     edit: "Edit task"
-    finish: "Complete task"
+    finish: "Complete work item"
 
   filters:
     responsible: "Responsible"

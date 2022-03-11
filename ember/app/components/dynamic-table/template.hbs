@@ -28,6 +28,14 @@
             />
           {{/each}}
         </tr>
+      {{else}}
+        {{#unless @loading}}
+          <tr>
+            <td colspan={{@config.columns.length}}>
+              {{t "global.empty"}}
+            </td>
+          </tr>
+        {{/unless}}
       {{/each}}
       {{#if @hasNextPage}}
         <tr>

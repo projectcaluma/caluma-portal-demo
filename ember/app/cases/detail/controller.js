@@ -16,8 +16,9 @@ export default class CasesDetailController extends Controller.extend(
     this.fetchCase.cancelAll();
   }
 
-  @lastValue("fetchCase") caseNode;
-  @task *fetchCase() {
+  @lastValue("fetchCase") case;
+  @task
+  *fetchCase() {
     if (typeof this.model === "object" && this.model) {
       return this.model;
     }

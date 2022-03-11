@@ -1,25 +1,25 @@
-{{!-- template-lint-disable no-invalid-interactive --}}
-<div class="context-menu-container" {{on "mouseleave" this.handleMouseLeave}} {{on "mouseenter" this.handleMouseEnter}}>
-  <button
-    type="button"
-    class="context-menu-trigger"
-    title={{t "global.openMenu"}}
-    {{on "click" (set this "menuOpen" true)}}
-  >
-    <span hidden>{{t "global.openMenu"}}</span>
-    <FaIcon @icon="ellipsis-v" />
-  </button>
-  {{#if this.menuOpen}}
-    <div class="context-menu">
-      <ul>
-        {{#each @actions as |action|}}
-          <li>
-            <button type="button" {{on "click" action.action}}>
-              {{action.title}}
-            </button>
-          </li>
-        {{/each}}
-      </ul>
-    </div>
-  {{/if}}
+<UkButton
+  @type="button"
+  @color="text"
+  @title={{t "global.openMenu"}}
+>
+  <span hidden>{{t "global.openMenu"}}</span>
+  <UkIcon @icon="more-vertical" />
+</UkButton>
+<div uk-drop>
+  <div class="uk-card uk-card-body uk-card-small uk-card-default">
+    <ul class="uk-list">
+      {{#each @actions as |action|}}
+        <li>
+          <UkButton
+            @type="button"
+            @color="text"
+            @onClick={{action.action}}
+          >
+            {{action.title}}
+          </UkButton>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
 </div>

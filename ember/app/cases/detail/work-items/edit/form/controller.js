@@ -14,27 +14,26 @@ export default class CasesDetailWorkItemsEditFormController extends Controller {
   @queryManager apollo;
 
   @service store;
-  @service notifications;
+  @service notification;
   @service intl;
-  @service moment;
-
-  @lastValue("fetchWorkItems") workItem;
+  @service router;
 
   @calumaQuery({ query: allWorkItems })
   workItemsQuery;
 
+  @lastValue("fetchWorkItems") workItem;
   @restartableTask()
-  *fetchWorkItems(model) {
-    if (typeof model === "object") {
-      return model;
+  *fetchWorkItems(id) {
+    if (typeof id === "object") {
+      return id;
     }
     try {
-      yield this.workItemsQuery.fetch({ filter: [{ id: model }] });
+      yield this.workItemsQuery.fetch({ filter: [{ id }] });
 
       return this.workItemsQuery.value[0];
     } catch (error) {
       console.error(error);
-      this.notifications.error(this.intl.t("workItems.fetchError"));
+      this.notification.danger(this.intl.t("workItems.fetchError"));
     }
   }
 
@@ -44,6 +43,6 @@ export default class CasesDetailWorkItemsEditFormController extends Controller {
       mutation: completeWorkItem,
       variables: { id: this.workItem.id },
     });
-    this.transitionToRoute("cases.detail.work-items");
+    this.router.transitionTo("cases.detail.work-items");
   }
 }
