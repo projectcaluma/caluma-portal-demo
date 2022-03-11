@@ -12,8 +12,8 @@ nav:
   documents: "Documents"
   home: "Home"
   support: "Support"
-  form-builder: "Form Builder"
-  tasks: "Tasks"
+  formBuilder: "Form Builder"
+  workItems: "Work items"
 
 documents:
   title: "Documents"

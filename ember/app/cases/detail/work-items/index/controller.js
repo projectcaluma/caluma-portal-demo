@@ -1,7 +1,7 @@
 import Controller from "@ember/controller";
+import calumaQuery from "@projectcaluma/ember-core/caluma-query";
+import { allWorkItems } from "@projectcaluma/ember-core/caluma-query/queries";
 import { queryManager } from "ember-apollo-client";
-import calumaQuery from "ember-caluma/caluma-query";
-import { allWorkItems } from "ember-caluma/caluma-query/queries";
 import { restartableTask } from "ember-concurrency-decorators";
 
 export default class CasesDetailWorkItemsController extends Controller {

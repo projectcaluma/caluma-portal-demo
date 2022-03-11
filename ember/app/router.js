@@ -7,8 +7,6 @@ export default class Router extends EmberRouter {
   rootURL = config.rootURL;
 }
 
-const resetNamespace = true;
-
 //eslint-disable-next-line array-callback-return
 Router.map(function () {
   this.mount("ember-emeis", { as: "emeis", path: "/emeis" });
@@ -28,7 +26,7 @@ Router.map(function () {
     });
     this.route("new");
   });
-  this.route("work-items", { resetNamespace }, function () {
+  this.route("work-items", function () {
     this.route("detail", { path: "/ :id" }, function () {
       this.route("edit");
     });

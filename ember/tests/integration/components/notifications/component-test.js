@@ -12,6 +12,6 @@ module("Integration | Component | notifications", function (hooks) {
 
     await render(hbs`<Notifications />`);
 
-    assert.equal(this.element.textContent.trim(), "");
+    assert.strictEqual(this.element.textContent.trim(), "");
   });
 });

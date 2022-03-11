@@ -1,8 +1,8 @@
 import { inject as service } from "@ember/service";
 import { tracked } from "@glimmer/tracking";
+import WorkItemModel from "@projectcaluma/ember-core/caluma-query/models/work-item";
 import saveWorkItemMutation from "caluma-portal-demo/gql/mutations/save-work-item";
 import { queryManager } from "ember-apollo-client";
-import WorkItemModel from "ember-caluma/caluma-query/models/work-item";
 
 export default class CustomWorkItemModel extends WorkItemModel {
   @queryManager apollo;
