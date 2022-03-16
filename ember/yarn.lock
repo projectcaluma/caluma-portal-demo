@@ -14,7 +14,7 @@
   dependencies:
     "@jridgewell/trace-mapping" "^0.3.0"
 
-"@apollo/client@3.5.10", "@apollo/client@^3.2.1", "@apollo/client@^3.5.10", "@apollo/client@^3.5.8":
+"@apollo/client@3.5.10", "@apollo/client@^3.2.1", "@apollo/client@^3.5.10":
   version "3.5.10"
   resolved "https://registry.yarnpkg.com/@apollo/client/-/client-3.5.10.tgz#43463108a6e07ae602cca0afc420805a19339a71"
   integrity sha512-tL3iSpFe9Oldq7gYikZK1dcYxp1c01nlSwtsMz75382HcI6fvQXyFXUCJTTK3wgO2/ckaBvRGw7VqjFREdVoRw==
@@ -1856,29 +1856,7 @@
     style-value-types "^3.1.7"
     tslib "^1.10.0"
 
-"@projectcaluma/ember-core@11.0.0-beta.4":
-  version "11.0.0-beta.4"
-  resolved "https://registry.yarnpkg.com/@projectcaluma/ember-core/-/ember-core-11.0.0-beta.4.tgz#60a328c434d7dc20d1db02ca39706b63dfc0b851"
-  integrity sha512-SpfgCGRqdBFTxzxNBmo/ajShLxVYGaD+8uAd0Za5KGrNPx1nxRDPd5M1V2zoWjZ+Yk6dlIjlvVfY3O6hug4Bnw==
-  dependencies:
-    "@apollo/client" "^3.5.8"
-    "@glimmer/tracking" "^1.0.4"
-    ember-apollo-client "^3.2.0"
-    ember-auto-import "^2.4.0"
-    ember-cli-babel "^7.26.11"
-    ember-cli-htmlbars "^6.0.1"
-    ember-concurrency "^2.2.0"
-    ember-fetch "^8.1.1"
-    ember-inflector "^4.0.2"
-    ember-intl "^5.7.2"
-    ember-resources "^4.3.1"
-    graphql "^15.8.0"
-    graphql-tag "^2.12.6"
-    jexl "^2.3.0"
-    lodash.clonedeep "^4.5.0"
-    slugify "^1.6.5"
-
-"@projectcaluma/ember-core@^11.0.0-beta.4", "@projectcaluma/ember-core@^11.0.0-beta.5":
+"@projectcaluma/ember-core@11.0.0-beta.5", "@projectcaluma/ember-core@^11.0.0-beta.4", "@projectcaluma/ember-core@^11.0.0-beta.5":
   version "11.0.0-beta.5"
   resolved "https://registry.yarnpkg.com/@projectcaluma/ember-core/-/ember-core-11.0.0-beta.5.tgz#204995928a146a5a5d35e7ba79e60aa81dba218d"
   integrity sha512-aV2EoyujfJayD34C3FnVfyUUK+ApcvJznj8Ist+gCbWLZwroC/+Qd1CasRDHa2kt9yWH67E0CYQQpjTjZVlKYQ==
@@ -7222,7 +7200,7 @@ ember-concurrency-decorators@^2.0.0, ember-concurrency-decorators@^2.0.1:
     ember-cli-htmlbars "^4.3.1"
     ember-cli-typescript "^3.1.4"
 
-ember-concurrency@2.2.1, "ember-concurrency@>=1.0.0 <3", ember-concurrency@^2.1.2, ember-concurrency@^2.2.0, ember-concurrency@^2.2.1:
+ember-concurrency@2.2.1, "ember-concurrency@>=1.0.0 <3", ember-concurrency@^2.1.2, ember-concurrency@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/ember-concurrency/-/ember-concurrency-2.2.1.tgz#4ed2e167036d00f7142312bc93c16f13ed9a259c"
   integrity sha512-a4283Yq+jimxqoD5YaxQu7cXePHKqkNQfsT4fs0nYTz5PYbUd6wzUtelp6k8R1JTNPwDdxyVvUgu7yYoC8Sk5A==
@@ -7476,14 +7454,7 @@ ember-in-viewport@^4.0.0:
     intersection-observer-admin "~0.3.2"
     raf-pool "~0.1.4"
 
-ember-inflector@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/ember-inflector/-/ember-inflector-4.0.1.tgz#e0aa9e39119156a278c80bb8cdec8462ecb8e6ab"
-  integrity sha512-D14nH2wVMp13ciOONcHMXwdL/IoMBSDXsGObF2rsQX7F8vGjwp+jnSNzZuGjjIvlBFQydOJ+R2n86J2e8HRTQA==
-  dependencies:
-    ember-cli-babel "^7.23.0"
-
-ember-inflector@^4.0.2:
+ember-inflector@^4.0.1, ember-inflector@^4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/ember-inflector/-/ember-inflector-4.0.2.tgz#4494f1a5f61c1aca7702d59d54024cc92211d8ec"
   integrity sha512-+oRstEa52mm0jAFzhr51/xtEWpCEykB3SEBr7vUg8YnXUZJ5hKNBppP938q8Zzr9XfJEbzrtDSGjhKwJCJv6FQ==
@@ -7701,7 +7672,7 @@ ember-resolver@8.0.3:
     ember-cli-version-checker "^5.1.2"
     resolve "^1.20.0"
 
-ember-resources@^4.1.3, ember-resources@^4.3.1, ember-resources@^4.3.3, ember-resources@^4.4.0:
+ember-resources@^4.1.3, ember-resources@^4.3.3, ember-resources@^4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/ember-resources/-/ember-resources-4.4.0.tgz#a3b85a0269c3523ba32a2a5ab15472c8e90a6a41"
   integrity sha512-bMk3qdD7sgG33VY3Znri6z2p/XneITuT02zgFROS9flvUE124rnW/m9ND/fySt5EOE8URhS3IZ6MImIgI1dyCg==
