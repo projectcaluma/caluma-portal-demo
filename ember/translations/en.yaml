@@ -11,19 +11,19 @@ global:
 nav:
   emeis: "Emeis"
   alexandria: "Alexandria"
-  documents: "Documents"
+  cases: "Cases"
   home: "Home"
   support: "Support"
   formBuilder: "Form Builder"
   workItems: "Work items"
 
-documents:
-  title: "Documents"
+cases:
+  title: "Cases"
   number: "Number"
   municipality: "Municipality"
   type: "Type"
 
-  pageInfo: "Showing {length} of {total} documents"
+  pageInfo: "Showing {length} of {total} cases"
   orderBy: "Order by"
   createdAt: "Created"
   modifiedAt: "Last updated"
@@ -51,7 +51,7 @@ documents:
 
   empty:
     welcome: "Welcome to {appName}"
-    no-documents: "It looks like you do not have any documents as of yet."
+    no-cases: "It looks like you do not have any cases as of yet."
 
   subnav:
     overview: "Overview"

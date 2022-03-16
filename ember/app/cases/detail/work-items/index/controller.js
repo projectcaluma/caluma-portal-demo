@@ -1,25 +1,36 @@
 import Controller from "@ember/controller";
-import calumaQuery from "@projectcaluma/ember-core/caluma-query";
+import { useCalumaQuery } from "@projectcaluma/ember-core/caluma-query";
 import { allWorkItems } from "@projectcaluma/ember-core/caluma-query/queries";
-import { restartableTask } from "ember-concurrency-decorators";
 
 export default class CasesDetailWorkItemsController extends Controller {
-  @calumaQuery({
-    query: allWorkItems,
-    options: "options",
-  })
-  readyWorkItemsQuery;
+  readyWorkItemsQuery = useCalumaQuery(this, allWorkItems, () => ({
+    options: this.options,
+    filter: this.queryFilter("READY"),
+    order: this.readyOrder,
+  }));
 
-  @calumaQuery({
-    query: allWorkItems,
-    options: "options",
-  })
-  completedWorkItemsQuery;
+  completedWorkItemsQuery = useCalumaQuery(this, allWorkItems, () => ({
+    options: this.options,
+    filter: this.queryFilter("COMPLETED"),
+    order: this.completedOrder,
+  }));
 
   get options() {
     return {
       pageSize: 20,
     };
+  }
+
+  queryFilter(status) {
+    return [{ case: this.model.value[0].id }, { status }];
+  }
+
+  get readyOrder() {
+    return [{ attribute: "DEADLINE", direction: "ASC" }];
+  }
+
+  get completedOrder() {
+    return [{ attribute: "CLOSED_AT", direction: "DESC" }];
   }
 
   get readyTableConfig() {
@@ -59,20 +70,5 @@ export default class CasesDetailWorkItemsController extends Controller {
         },
       ],
     };
-  }
-
-  @restartableTask
-  *fetchWorkItems() {
-    const filter = [{ case: this.model.id }];
-
-    yield this.readyWorkItemsQuery.fetch({
-      filter: [...filter, { status: "READY" }],
-      order: [{ attribute: "DEADLINE", direction: "ASC" }],
-    });
-
-    yield this.completedWorkItemsQuery.fetch({
-      filter: [...filter, { status: "COMPLETED" }],
-      order: [{ attribute: "CLOSED_AT", direction: "DESC" }],
-    });
   }
 }

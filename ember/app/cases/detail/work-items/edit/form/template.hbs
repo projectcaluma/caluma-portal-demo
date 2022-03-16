@@ -1,6 +1,6 @@
 <h3>{{this.workItem.name}}</h3>
 
-{{#if this.fetchWorkItems.isRunning}}
+{{#if @model.isLoading}}
   <div class="uk-text-center uk-padding">
     <UkSpinner @ratio={{2}} />
   </div>

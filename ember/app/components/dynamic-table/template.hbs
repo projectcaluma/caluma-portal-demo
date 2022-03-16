@@ -20,7 +20,7 @@
     </thead>
     <tbody class="uk-overflow-auto">
       {{#each @data as |entry|}}
-        <tr class="uk-table-middle">
+        <tr class="uk-table-middle" data-test-table-entry>
           {{#each @config.columns as |tdDefinition|}}
             <DynamicTable::TableData
               @tdDefinition={{tdDefinition}}

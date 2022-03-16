@@ -1,24 +1,38 @@
 import Controller from "@ember/controller";
 import { action, set } from "@ember/object";
 import { tracked } from "@glimmer/tracking";
-import calumaQuery from "@projectcaluma/ember-core/caluma-query";
+import { useCalumaQuery } from "@projectcaluma/ember-core/caluma-query";
 import { allWorkItems } from "@projectcaluma/ember-core/caluma-query/queries";
-import { restartableTask } from "ember-concurrency-decorators";
 
 export default class WorkItemsController extends Controller {
   queryParams = ["order", "status"];
-
-  @calumaQuery({ query: allWorkItems, options: "options" })
-  workItemsQuery;
 
   // Filters
   @tracked order = "urgent";
   @tracked status = "open";
 
-  get options() {
-    return {
-      pageSize: 20,
-    };
+  workItemsQuery = useCalumaQuery(this, allWorkItems, () => ({
+    options: { pageSize: 20 },
+    filter: this.queryFilters,
+    order: this.queryOrder,
+  }));
+
+  get queryFilters() {
+    const filter = [];
+
+    if (this.status === "closed") {
+      filter.push({ status: "COMPLETED" });
+    } else {
+      filter.push({ status: "READY" });
+    }
+
+    return filter;
+  }
+
+  get queryOrder() {
+    return this.order === "urgent"
+      ? [{ attribute: "DEADLINE", direction: "ASC" }]
+      : [{ attribute: "CREATED_AT", direction: "DESC" }];
   }
 
   get tableConfig() {
@@ -57,27 +71,8 @@ export default class WorkItemsController extends Controller {
     };
   }
 
-  @restartableTask
-  *fetchWorkItems() {
-    const filter = [];
-
-    if (this.status === "closed") {
-      filter.push({ status: "COMPLETED" });
-    } else {
-      filter.push({ status: "READY" });
-    }
-
-    const order =
-      this.order === "urgent"
-        ? [{ attribute: "DEADLINE", direction: "ASC" }]
-        : [{ attribute: "CREATED_AT", direction: "DESC" }];
-
-    yield this.workItemsQuery.fetch({ filter, order });
-  }
-
   @action
   updateFilter(type, value) {
     set(this, type, value);
-    this.fetchWorkItems.perform();
   }
 }

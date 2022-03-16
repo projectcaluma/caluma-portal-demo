@@ -1,43 +1,25 @@
 import Controller from "@ember/controller";
 import { action } from "@ember/object";
 import { inject as service } from "@ember/service";
-import calumaQuery from "@projectcaluma/ember-core/caluma-query";
-import { allWorkItems } from "@projectcaluma/ember-core/caluma-query/queries";
+import { tracked } from "@glimmer/tracking";
 import completeWorkItem from "caluma-portal-demo/gql/mutations/complete-work-item";
 import saveWorkItem from "caluma-portal-demo/gql/mutations/save-work-item";
 import { queryManager } from "ember-apollo-client";
-import { lastValue } from "ember-concurrency";
 import { dropTask } from "ember-concurrency-decorators";
 import moment from "moment";
 
 export default class CasesDetailWorkItemsEditController extends Controller {
   @queryManager apollo;
 
-  @service store;
   @service notification;
   @service intl;
   @service router;
 
-  @calumaQuery({ query: allWorkItems, options: "options" })
-  workItemsQuery;
-
-  get options() {
-    return {
-      pageSize: 1,
-    };
+  get workItem() {
+    return this.model.value[0];
   }
 
-  @lastValue("fetchWorkItem") workItem;
-  @dropTask()
-  *fetchWorkItem(id) {
-    try {
-      yield this.workItemsQuery.fetch({ filter: [{ id }] });
-
-      return this.workItemsQuery.value[0];
-    } catch (error) {
-      this.notification.danger(this.intl.t("workItems.fetchError"));
-    }
-  }
+  @tracked description = this.workItem.description;
 
   @dropTask
   *finishWorkItem(event) {
@@ -70,7 +52,6 @@ export default class CasesDetailWorkItemsEditController extends Controller {
   @dropTask
   *saveManualWorkItem(event) {
     event.preventDefault();
-
     try {
       yield this.apollo.mutate({
         mutation: saveWorkItem,
@@ -79,15 +60,15 @@ export default class CasesDetailWorkItemsEditController extends Controller {
             workItem: this.workItem.id,
             description: this.workItem.description,
             deadline: this.workItem.deadline,
-            meta: JSON.stringify(this.workItem?.meta),
           },
         },
       });
 
       this.notification.success(this.intl.t("workItems.saveSuccess"));
 
-      this.router.transitionTo("cases.detail.work-items.index");
+      // this.router.transitionTo("cases.detail.work-items.index");
     } catch (error) {
+      console.error(error);
       this.notification.danger(this.intl.t("workItems.saveError"));
     }
   }

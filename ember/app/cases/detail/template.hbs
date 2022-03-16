@@ -1,4 +1,4 @@
-{{#if this.fetchCase.isRunning}}
+{{#if @model.isLoading}}
   <div class="uk-text-center uk-padding">
     <UkSpinner @ratio={{2}} />
   </div>
@@ -14,13 +14,13 @@
 
   <UkTab as |tab|>
     <tab.item @href="/{{this.case.id}}" @linkToIndex={{true}}>
-      {{t "documents.subnav.overview"}}
+      {{t "cases.subnav.overview"}}
     </tab.item>
     <tab.item @href="/{{this.case.id}}/work-items">
-      {{t "documents.subnav.workItems"}}
+      {{t "cases.subnav.workItems"}}
     </tab.item>
     <tab.item @href="/{{this.case.id}}/edit">
-      {{t "documents.subnav.document"}}
+      {{t "cases.subnav.document"}}
     </tab.item>
   </UkTab>
 

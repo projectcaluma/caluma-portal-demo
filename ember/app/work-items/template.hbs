@@ -4,7 +4,7 @@
 
 <hr />
 
-<Filters {{did-insert (perform this.fetchWorkItems)}} as |Filter|>
+<Filters as |Filter|>
   <Filter.RadioButtons
     @name="status"
     @label={{t "workItems.filters.status"}}
