@@ -147,53 +147,13 @@
   },
   {
     "model": "caluma_workflow.task",
-    "pk": "end",
+    "pk": "fill-in-document",
     "fields": {
       "created_at": "2020-08-10T14:27:54.985Z",
       "modified_at": "2020-08-10T14:27:54.985Z",
       "created_by_user": null,
       "created_by_group": null,
-      "name": "{\"en\": \"End\"}",
-      "description": "{\"en\": null}",
-      "type": "simple",
-      "meta": {},
-      "address_groups": null,
-      "control_groups": null,
-      "is_archived": false,
-      "form": null,
-      "lead_time": null,
-      "is_multiple_instance": false
-    }
-  },
-  {
-    "model": "caluma_workflow.task",
-    "pk": "publication",
-    "fields": {
-      "created_at": "2020-08-10T14:27:54.985Z",
-      "modified_at": "2020-08-10T14:27:54.985Z",
-      "created_by_user": null,
-      "created_by_group": null,
-      "name": "{\"en\": \"Publication\"}",
-      "description": "{\"en\": null}",
-      "type": "simple",
-      "meta": {},
-      "address_groups": null,
-      "control_groups": null,
-      "is_archived": false,
-      "form": null,
-      "lead_time": null,
-      "is_multiple_instance": false
-    }
-  },
-  {
-    "model": "caluma_workflow.task",
-    "pk": "start",
-    "fields": {
-      "created_at": "2020-08-10T14:27:54.985Z",
-      "modified_at": "2020-08-10T14:27:54.985Z",
-      "created_by_user": null,
-      "created_by_group": null,
-      "name": "{\"en\": \"Start\"}",
+      "name": "{\"en\": \"Fill in document\"}",
       "description": "{\"en\": null}",
       "type": "simple",
       "meta": {},
@@ -219,7 +179,7 @@
       "is_published": false,
       "is_archived": false,
       "allow_all_forms": true,
-      "start_tasks": ["end", "publication", "start"],
+      "start_tasks": ["fill-in-document"],
       "allow_forms": []
     }
   },
@@ -231,7 +191,7 @@
       "modified_at": "2020-08-10T14:30:14.806Z",
       "created_by_user": null,
       "created_by_group": null,
-      "next": "['start', 'publication', 'end']|tasks"
+      "next": "['fill-in-document']|tasks"
     }
   }
 ]
