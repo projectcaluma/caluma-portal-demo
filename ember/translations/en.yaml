@@ -76,8 +76,8 @@ workItems:
   notifyCompleted: "on completion"
   notifyDeadline: "on deadline"
 
-  saveSuccess: "Task successfully saved"
-  finishSuccess: "Task successfully completed"
+  saveSuccess: "Work item successfully saved"
+  finishSuccess: "Work item successfully completed"
   fetchError: "Error while loading work item"
   saveError: "Error while saving the work item"
 

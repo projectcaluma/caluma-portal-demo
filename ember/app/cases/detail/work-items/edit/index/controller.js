@@ -65,8 +65,6 @@ export default class CasesDetailWorkItemsEditController extends Controller {
       });
 
       this.notification.success(this.intl.t("workItems.saveSuccess"));
-
-      // this.router.transitionTo("cases.detail.work-items.index");
     } catch (error) {
       console.error(error);
       this.notification.danger(this.intl.t("workItems.saveError"));

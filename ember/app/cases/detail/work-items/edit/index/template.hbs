@@ -3,114 +3,119 @@
 </h1>
 
 <hr>
+{{#if @model.isLoading}}
+  <div class="uk-text-center uk-padding">
+    <UkSpinner @ratio={{2}} />
+  </div>
+{{else}}
+  <h2>
+    {{this.workItem.task.name}}
+  </h2>
 
-<h2>
-  {{this.workItem.task.name}}
-</h2>
-
-<div class="work-item-attributes">
-  {{#if this.workItem.isCompleted}}
-    <div class="work-item-attribute">
-      <span class="work-item-attribute__title">
-        {{t "workItems.closedBy"}}
-      </span>
-      {{this.workItem.closedByUser.fullName}}
-    </div>
-    <div class="work-item-attribute">
-      <span class="work-item-attribute__title">
-        {{t "workItems.closedAt"}}
-      </span>
-      {{
-      format-date
-        this.workItem.closedAt
-        day="2-digit"
-        month="2-digit"
-        year="numeric"
-        hour="2-digit"
-        minute="2-digit"
-        hour12=false
-      }}
-    </div>
-  {{/if}}
-</div>
-
-<form
-  class="uk-form-stacked"
-  {{on "submit" (perform this.saveManualWorkItem)}}
->
-  <div class="uk-margin">
-    <label class="uk-form-label" for="createdAt">
-      {{t "workItems.createdAt"}}
-    </label>
-    <div class="uk-form-controls">
-      <input
-        class="uk-input"
-        id="createdAt" 
-        type="text" 
-        value={{
-          format-date
-            this.workItem.raw.createdAt
-            day="2-digit"
-            month="2-digit"
-            year="numeric"
-            hour="2-digit"
-            minute="2-digit"
-            hour12=false
+  <div class="work-item-attributes">
+    {{#if this.workItem.isCompleted}}
+      <div class="work-item-attribute">
+        <span class="work-item-attribute__title">
+          {{t "workItems.closedBy"}}
+        </span>
+        {{this.workItem.closedByUser.fullName}}
+      </div>
+      <div class="work-item-attribute">
+        <span class="work-item-attribute__title">
+          {{t "workItems.closedAt"}}
+        </span>
+        {{
+        format-date
+          this.workItem.closedAt
+          day="2-digit"
+          month="2-digit"
+          year="numeric"
+          hour="2-digit"
+          minute="2-digit"
+          hour12=false
         }}
-        disabled
-      >
-    </div>
+      </div>
+    {{/if}}
   </div>
 
-  <div class="uk-margin">
-    <label class="uk-form-label" for="description">
-      {{t "workItems.description"}}
-    </label>
-    <div class="uk-form-controls">
-      <Textarea
-        class="uk-input"
-        id="description"
-        @value={{this.description}}
+  <form
+    class="uk-form-stacked"
+    {{on "submit" (perform this.saveManualWorkItem)}}
+  >
+    <div class="uk-margin">
+      <label class="uk-form-label" for="createdAt">
+        {{t "workItems.createdAt"}}
+      </label>
+      <div class="uk-form-controls">
+        <input
+          class="uk-input"
+          id="createdAt" 
+          type="text" 
+          value={{
+            format-date
+              this.workItem.raw.createdAt
+              day="2-digit"
+              month="2-digit"
+              year="numeric"
+              hour="2-digit"
+              minute="2-digit"
+              hour12=false
+          }}
+          disabled
+        >
+      </div>
+    </div>
+
+    <div class="uk-margin">
+      <label class="uk-form-label" for="description">
+        {{t "workItems.description"}}
+      </label>
+      <div class="uk-form-controls">
+        <Textarea
+          class="uk-input"
+          id="description"
+          @value={{this.description}}
+        />
+      </div>
+    </div>
+
+    <div class="uk-margin">
+      <label class="uk-form-label" for="deadline">
+        {{t "workItems.deadline"}}
+        <span class="mandatory">
+          *
+        </span>
+      </label>
+      <div class="uk-form-controls">
+        <PikadayInput
+          id="deadline"
+          class="uk-input"
+          @value={{this.workItem.raw.deadline}}
+          @useUTC={{true}}
+          @onSelection={{this.setDeadline}}
+        />
+      </div>
+    </div>
+
+    <div class="uk-text-right">
+      <UkButton
+        @type="button"
+        @label={{t "global.cancel"}}
+        @onClick={{this.cancel}}
+      />
+
+      <UkButton
+        @type="submit"
+        @color="primary"
+        @label={{t "global.save"}}
+      />
+
+      <UkButton
+        @type="submit"
+        @color="primary"
+        @label={{t "workItems.actions.finish"}}
+        @onClick={{perform this.finishWorkItem}}
       />
     </div>
-  </div>
-
-  <div class="uk-margin">
-    <label class="uk-form-label" for="deadline">
-      {{t "workItems.deadline"}}
-      <span class="mandatory">
-        *
-      </span>
-    </label>
-    <div class="uk-form-controls">
-      <PikadayInput
-        id="deadline"
-        class="uk-input"
-        @value={{this.workItem.raw.deadline}}
-        @useUTC={{true}}
-        @onSelection={{this.setDeadline}}
-      />
-    </div>
-  </div>
-
-  <div class="uk-text-right">
-    <UkButton
-      @type="button"
-      @label={{t "global.cancel"}}
-      @onClick={{this.cancel}}
-    />
-
-    <UkButton
-      @type="submit"
-      @color="primary"
-      @label={{t "global.save"}}
-    />
-
-    <UkButton
-      @type="submit"
-      @color="primary"
-      @label={{t "workItems.actions.finish"}}
-      @onClick={{perform this.finishWorkItem}}
-    />
-  </div>
-</form>
+  </form>
+{{/if}}

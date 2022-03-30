@@ -6,7 +6,10 @@
   </div>
 {{else}}
   <CfContent @documentId={{this.workItem.document.id}}
-    @context={{hash completeCallback=(perform this.completeWorkItem)}}
+    @context={{hash
+      completeCallback=(perform this.completeWorkItem)
+      actionButtonOnSuccess=this.actionButtonOnSuccess
+    }}
     @disabled={{not this.workItem.isReady}}
   />
 {{/if}}
