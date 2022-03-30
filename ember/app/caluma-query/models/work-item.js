@@ -10,7 +10,7 @@ export default class CustomWorkItemModel extends WorkItemModel {
   }
 
   get case() {
-    return this.raw.case.parentWorkItem?.case || this.raw.case;
+    return this.raw.case;
   }
 
   static fragment = `{

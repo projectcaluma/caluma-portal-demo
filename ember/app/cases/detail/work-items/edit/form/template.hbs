@@ -7,7 +7,6 @@
 {{else}}
   <CfContent @documentId={{this.workItem.document.id}}
     @context={{hash
-      completeCallback=(perform this.completeWorkItem)
       actionButtonOnSuccess=this.actionButtonOnSuccess
     }}
     @disabled={{not this.workItem.isReady}}

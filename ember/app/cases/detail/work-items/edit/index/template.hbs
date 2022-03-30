@@ -12,16 +12,16 @@
     {{this.workItem.task.name}}
   </h2>
 
-  <div class="work-item-attributes">
+  <div>
     {{#if this.workItem.isCompleted}}
-      <div class="work-item-attribute">
-        <span class="work-item-attribute__title">
+      <div>
+        <span>
           {{t "workItems.closedBy"}}
         </span>
         {{this.workItem.closedByUser.fullName}}
       </div>
-      <div class="work-item-attribute">
-        <span class="work-item-attribute__title">
+      <div>
+        <span>
           {{t "workItems.closedAt"}}
         </span>
         {{
@@ -81,10 +81,7 @@
 
     <div class="uk-margin">
       <label class="uk-form-label" for="deadline">
-        {{t "workItems.deadline"}}
-        <span class="mandatory">
-          *
-        </span>
+        {{t "workItems.deadline"}}*
       </label>
       <div class="uk-form-controls">
         <PikadayInput
@@ -110,12 +107,13 @@
         @label={{t "global.save"}}
       />
 
-      <UkButton
-        @type="submit"
-        @color="primary"
-        @label={{t "workItems.actions.finish"}}
-        @onClick={{perform this.finishWorkItem}}
-      />
+      <WorkItemButton
+        @mutation="complete"
+        @workItemId={{this.workItem.id}}
+        @onSuccess={{this.finishWorkItem}}
+      >
+        {{t "workItems.actions.finish"}}
+      </WorkItemButton>
     </div>
   </form>
 {{/if}}

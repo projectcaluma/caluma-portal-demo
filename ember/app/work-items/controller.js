@@ -1,5 +1,5 @@
 import Controller from "@ember/controller";
-import { action, set } from "@ember/object";
+import { action } from "@ember/object";
 import { tracked } from "@glimmer/tracking";
 import { useCalumaQuery } from "@projectcaluma/ember-core/caluma-query";
 import { allWorkItems } from "@projectcaluma/ember-core/caluma-query/queries";
@@ -7,7 +7,6 @@ import { allWorkItems } from "@projectcaluma/ember-core/caluma-query/queries";
 export default class WorkItemsController extends Controller {
   queryParams = ["order", "status"];
 
-  // Filters
   @tracked order = "urgent";
   @tracked status = "open";
 
@@ -73,6 +72,6 @@ export default class WorkItemsController extends Controller {
 
   @action
   updateFilter(type, value) {
-    set(this, type, value);
+    this[type] = value;
   }
 }
