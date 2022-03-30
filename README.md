@@ -7,8 +7,8 @@ This includes the following use-cases:
 - Fill out a form
 
 ## Setup
-To start the project you can run either `docker-compose up`
-or `make`. To load some example data you can run `make loaddata`.
+To start the project you can run `docker-compose up`
+To load some example data you can run `make loaddata`.
 
 If you get exceptions from `make loaddata` make sure that the caluma container
 is running *and* has all migrations finished.
@@ -37,6 +37,5 @@ docker-compose exec alexandria ./manage.py loaddata inital_data.json
 
 | Command                 | Description                                        |
 | ----------------------- | -------------------------------------------------- |
-| `start` (default target)| Starts all containers                              |
 | `loaddata`              | Loads a set of example data                        |
-| `clean`                 | Stop and remove all containers and remove volumes. |
+| `flush`                 | Flush the caluma container                         |
