@@ -1,0 +1,19 @@
+query getCaseQuery($filter: [CaseFilterSetType]) {
+  allCases(filter: $filter) {
+    edges {
+      node {
+        id
+        status
+        createdAt
+        modifiedAt
+        document {
+          id
+          form {
+            name
+            description
+          }
+        }
+      }
+    }
+  }
+}

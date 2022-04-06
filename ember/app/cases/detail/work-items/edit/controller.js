@@ -1,20 +1,20 @@
 import Controller from "@ember/controller";
-import getCaseQuery from "caluma-portal-demo/gql/queries/get-case";
+import getWorkItemQuery from "caluma-portal-demo/gql/queries/get-work-item";
 import { queryManager } from "ember-apollo-client";
 import { dropTask, lastValue } from "ember-concurrency";
 
-export default class CasesDetailController extends Controller {
+export default class CasesDetailWorkItemsEditController extends Controller {
   @queryManager apollo;
 
-  @lastValue("getCase") case;
+  @lastValue("getWorkItem") workItem;
   @dropTask
-  *getCase() {
+  *getWorkItem() {
     return (yield this.apollo.query(
       {
-        query: getCaseQuery,
+        query: getWorkItemQuery,
         variables: { filter: [{ id: this.model }] },
       },
-      "allCases.edges"
+      "allWorkItems.edges"
     )).map(({ node }) => node)[0];
   }
 }

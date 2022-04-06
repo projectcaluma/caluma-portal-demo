@@ -3,30 +3,24 @@
 </h1>
 
 <hr>
-{{#if @model.isLoading}}
+{{#if this.parent.getWorkItem.isRunning}}
   <div class="uk-text-center uk-padding">
     <UkSpinner @ratio={{2}} />
   </div>
 {{else}}
   <h2>
-    {{this.workItem.task.name}}
+    {{this.parent.workItem.task.name}}
   </h2>
 
   <div>
-    {{#if this.workItem.isCompleted}}
-      <div>
-        <span>
-          {{t "workItems.closedBy"}}
-        </span>
-        {{this.workItem.closedByUser.fullName}}
-      </div>
+    {{#if this.parent.workItem.isCompleted}}
       <div>
         <span>
           {{t "workItems.closedAt"}}
         </span>
         {{
         format-date
-          this.workItem.closedAt
+          this.parent.workItem.closedAt
           day="2-digit"
           month="2-digit"
           year="numeric"
@@ -53,7 +47,7 @@
           type="text" 
           value={{
             format-date
-              this.workItem.raw.createdAt
+              this.parent.workItem.createdAt
               day="2-digit"
               month="2-digit"
               year="numeric"
@@ -87,7 +81,7 @@
         <PikadayInput
           id="deadline"
           class="uk-input"
-          @value={{this.workItem.raw.deadline}}
+          @value={{this.parent.workItem.deadline}}
           @useUTC={{true}}
           @onSelection={{this.setDeadline}}
         />
@@ -109,7 +103,7 @@
 
       <WorkItemButton
         @mutation="complete"
-        @workItemId={{this.workItem.id}}
+        @workItemId={{this.parent.workItem.id}}
         @onSuccess={{this.finishWorkItem}}
       >
         {{t "workItems.actions.finish"}}

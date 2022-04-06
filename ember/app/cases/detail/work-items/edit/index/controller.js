@@ -1,4 +1,4 @@
-import Controller from "@ember/controller";
+import Controller, { inject as controller } from "@ember/controller";
 import { action } from "@ember/object";
 import { inject as service } from "@ember/service";
 import { tracked } from "@glimmer/tracking";
@@ -14,12 +14,11 @@ export default class CasesDetailWorkItemsEditController extends Controller {
   @service intl;
   @service router;
 
-  get workItem() {
-    return this.model.value[0];
-  }
+  @controller("cases.detail.work-items.edit") parent;
 
-  @tracked description = this.workItem.description;
+  @tracked description = this.parent.workItem?.description;
 
+  @action
   finishWorkItem() {
     this.notification.success(this.intl.t("workItems.finishSuccess"));
 
@@ -34,9 +33,9 @@ export default class CasesDetailWorkItemsEditController extends Controller {
         mutation: saveWorkItem,
         variables: {
           input: {
-            workItem: this.workItem.id,
-            description: this.workItem.description,
-            deadline: this.workItem.deadline,
+            workItem: this.parent.workItem.id,
+            description: this.parent.workItem.description,
+            deadline: this.parent.workItem.deadline,
           },
         },
       });
@@ -50,7 +49,7 @@ export default class CasesDetailWorkItemsEditController extends Controller {
 
   @action
   setDeadline(value) {
-    this.workItem.deadline = moment(value);
+    this.parent.workItem.deadline = moment(value);
   }
 
   @action

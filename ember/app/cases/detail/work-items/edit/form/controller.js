@@ -1,17 +1,12 @@
-import Controller from "@ember/controller";
+import Controller, { inject as controller } from "@ember/controller";
 import { action } from "@ember/object";
 import { inject as service } from "@ember/service";
-import { queryManager } from "ember-apollo-client";
 
 export default class CasesDetailWorkItemsEditFormController extends Controller {
-  @queryManager apollo;
-
   @service notification;
   @service router;
 
-  get workItem() {
-    return this.model.value[0];
-  }
+  @controller("cases.detail.work-items.edit") parent;
 
   @action
   actionButtonOnSuccess() {

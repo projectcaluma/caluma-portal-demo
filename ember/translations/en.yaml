@@ -66,7 +66,7 @@ workItems:
   document: "Document"
   description: "Desciption"
   closedAt: "Completed on"
-  closedBy: "Completed by"
+  closedByUser: "Completed by"
   edit: "Edit task"
   responsible: "Responsible"
   deadline: "Deadline"

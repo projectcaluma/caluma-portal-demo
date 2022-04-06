@@ -1,14 +1,14 @@
-<h3>{{this.workItem.name}}</h3>
+<h3>{{this.parent.workItem.name}}</h3>
 
-{{#if @model.isLoading}}
+{{#if this.parent.getWorkItem.isRunning}}
   <div class="uk-text-center uk-padding">
     <UkSpinner @ratio={{2}} />
   </div>
 {{else}}
-  <CfContent @documentId={{this.workItem.document.id}}
+  <CfContent @documentId={{this.parent.workItem.document.id}}
     @context={{hash
       actionButtonOnSuccess=this.actionButtonOnSuccess
     }}
-    @disabled={{not this.workItem.isReady}}
+    @disabled={{not (eq this.parent.workItem.status "READY")}}
   />
 {{/if}}

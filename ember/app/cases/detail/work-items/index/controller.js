@@ -22,7 +22,7 @@ export default class CasesDetailWorkItemsController extends Controller {
   }
 
   queryFilter(status) {
-    return [{ case: this.model.value[0].id }, { status }];
+    return [{ case: this.model }, { status }];
   }
 
   get readyOrder() {

@@ -1,7 +1,5 @@
-import Controller from "@ember/controller";
+import Controller, { inject as controller } from "@ember/controller";
 
 export default class CasesDetailEditController extends Controller {
-  get case() {
-    return this.model.value[0];
-  }
+  @controller("cases.detail") parent;
 }

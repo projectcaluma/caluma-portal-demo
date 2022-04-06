@@ -12,13 +12,13 @@
             {{t "cases.status"}}
           </th>
           <td class="uk-width-1-3">
-            <CaseStateLabel @state={{this.case.raw.status}} @iconPosition="right" />
+            <CaseStateLabel @state={{this.parent.case.status}} @iconPosition="right" />
           </td>
           <th class="uk-text-bold uk-width-1-6">
             {{t "cases.description"}}
           </th>
           <td class="uk-width-1-3">
-            {{or this.case.form.description "-"}}
+            {{or this.parent.case.form.description "-"}}
           </td>
         </tr>
         <tr>
@@ -28,8 +28,8 @@
           <td class="uk-width-1-3">
             {{
               if
-              this.case.createdAt
-              (moment-format this.case.createdAt "DD.MM.YYYY")
+              this.parent.case.createdAt
+              (moment-format this.parent.case.createdAt "DD.MM.YYYY")
               "-"
             }}
           </td>
@@ -39,8 +39,8 @@
           <td class="uk-width-1-3">
             {{
               if
-              this.case.modifiedAt
-              (moment-format this.case.modifiedAt "DD.MM.YYYY")
+              this.parent.case.modifiedAt
+              (moment-format this.parent.case.modifiedAt "DD.MM.YYYY")
               "-"
             }}
           </td>
@@ -76,7 +76,7 @@
       {{t "cases.deleteText"}}
     </p>
     <UkButton
-      @onClick={{perform this.closeCase this.case}}
+      @onClick={{perform this.closeCase}}
       @disabled={{this.closeCase.isRunning}}
       @loading={{this.closeCase.isRunning}}
     >
