@@ -30,7 +30,7 @@ You have to add the following entry to your `/etc/hosts`:
 To start the project:
 ```bash
 docker-compose exec alexandria ./manage.py migrate
-docker-compose exec alexandria ./manage.py loaddata inital_data.json
+docker-compose exec alexandria ./manage.py loaddata initial_data.json
 ```
 
 ## Make commands
