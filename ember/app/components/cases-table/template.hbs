@@ -1,14 +1,14 @@
-<div {{did-insert this.setup}} {{did-update this.setup @order}}>
+<div>
   {{#if this.noCases}}
-    <div class="uk-width-2-3 uk-margin-auto">
+    <div class="uk-width-2-3 uk-margin-auto" data-test-no-cases>
       <h1 class="uk-text-center">
-        {{t "documents.empty.welcome" appName="Building Permit Demo"}}
+        {{t "cases.empty.welcome" appName="Building Permit Demo"}}
       </h1>
 
       <p
         class="uk-text-center uk-text-large uk-margin-large-top uk-margin-medium-bottom"
       >
-        {{t "documents.empty.no-documents"}}
+        {{t "cases.empty.no-cases"}}
       </p>
 
       <div class="uk-flex uk-flex-center">
@@ -18,9 +18,10 @@
           <LinkTo
             @route="cases.new"
             class="uk-button uk-button-default uk-width-medium uk-height-medium uk-flex uk-flex-middle uk-flex-center uk-flex-column"
+            data-test-no-cases-create
           >
             <UkIcon @icon="plus" @ratio="3" class="uk-margin" />
-            {{t "documents.new.title"}}
+            {{t "cases.new.title"}}
           </LinkTo>
         </div>
       </div>
@@ -30,8 +31,8 @@
       <div class="uk-width-expand uk-flex uk-flex-middle uk-text-meta">
         <span>
           {{t
-            "documents.pageInfo"
-            length=this.cases.length
+            "cases.pageInfo"
+            length=this.caseQuery.value.length
             total=this.pageInfo.totalCount
             htmlSafe=true
           }}
@@ -40,7 +41,7 @@
 
       <div class="uk-width-auto uk-flex uk-flex-middle">
         <label class="uk-text-meta uk-text-nowrap" for="order">
-          {{t "documents.orderBy"}}:
+          {{t "cases.orderBy"}}:
         </label>
         <select
           class="uk-select uk-form-small uk-margin-small-left"
@@ -59,11 +60,11 @@
       </div>
     </div>
     <DynamicTable
-      @loading={{and this.fetchCases.isRunning (eq this.cases.length 0)}}
-      @data={{this.cases}}
+      @loading={{this.caseQuery.isLoading}}
+      @data={{this.caseQuery.value}}
       @config={{this.dynamicTableConfig}}
-      @loadMoreData={{perform this.fetchCases this.pageInfo.endCursor}}
-      @hasNextPage={{this.pageInfo.hasNextPage}}
+      @loadMoreData={{this.caseQuery.fetchMore}}
+      @hasNextPage={{this.caseQuery.hasNextPage}}
     />
   {{/if}}
 </div>

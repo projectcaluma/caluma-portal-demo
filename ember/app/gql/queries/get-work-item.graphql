@@ -1,0 +1,22 @@
+query getWorkItemQuery($filter: [WorkItemFilterSetType]) {
+  allWorkItems(filter: $filter) {
+    edges {
+      node {
+        id
+        status
+        name
+        closedAt
+        closedByUser
+        deadline
+        description
+        createdAt
+        task {
+          name
+        }
+        document {
+          id
+        }
+      }
+    }
+  }
+}

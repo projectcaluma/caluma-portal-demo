@@ -1,4 +1,4 @@
-{{#if this.fetchCase.isRunning}}
+{{#if this.getCase.isRunning}}
   <div class="uk-text-center uk-padding">
     <UkSpinner @ratio={{2}} />
   </div>
@@ -9,16 +9,19 @@
       class="uk-icon-button uk-margin-right"
       uk-icon="icon: arrow-left; ratio: 2"
     />
-    {{this.caseNode.document.form.name}}
+    {{this.case.document.form.name}}
   </h2>
 
   <UkTab as |tab|>
-    <tab.link-item @route="cases.detail.index" @model={{this.caseNode}}>
-      {{t "documents.subnav.overview"}}
-    </tab.link-item>
-    <tab.link-item @route="cases.detail.edit" @model={{this.caseNode}}>
-      {{t "documents.subnav.document"}}
-    </tab.link-item>
+    <tab.item @href="/{{this.case.id}}" @linkToIndex={{true}}>
+      {{t "cases.subnav.overview"}}
+    </tab.item>
+    <tab.item @href="/{{this.case.id}}/work-items">
+      {{t "cases.subnav.workItems"}}
+    </tab.item>
+    <tab.item @href="/{{this.case.id}}/edit">
+      {{t "cases.subnav.document"}}
+    </tab.item>
   </UkTab>
 
   {{outlet}}

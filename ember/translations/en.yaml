@@ -2,22 +2,28 @@ demo: "Caluma Building Permit Demo"
 
 global:
   continue: "Continue"
+  empty: "No entries found"
+  paginationInfo: "<strong>1 - {count}</strong> von {total}"
+  openMenu: "Open menu"
+  cancel: "Cancel"
+  save: "Save"
 
 nav:
   emeis: "Emeis"
   alexandria: "Alexandria"
-  documents: "Documents"
+  cases: "Cases"
   home: "Home"
   support: "Support"
-  form-builder: "Form Builder"
+  formBuilder: "Form Builder"
+  workItems: "Work items"
 
-documents:
-  title: "Documents"
+cases:
+  title: "Cases"
   number: "Number"
   municipality: "Municipality"
   type: "Type"
 
-  pageInfo: "Showing {length} of {total} documents"
+  pageInfo: "Showing {length} of {total} cases"
   orderBy: "Order by"
   createdAt: "Created"
   modifiedAt: "Last updated"
@@ -45,8 +51,63 @@ documents:
 
   empty:
     welcome: "Welcome to {appName}"
-    no-documents: "It looks like you do not have any documents as of yet."
+    no-cases: "It looks like you do not have any cases as of yet."
 
   subnav:
     overview: "Overview"
+    workItems: "work item"
     document: "Document"
+
+workItems:
+  name: "Name"
+  title: "Open work item"
+  completedTitle: "Completed work item"
+  task: "Task"
+  document: "Document"
+  description: "Desciption"
+  closedAt: "Completed on"
+  closedByUser: "Completed by"
+  edit: "Edit task"
+  responsible: "Responsible"
+  deadline: "Deadline"
+  createdBy: "Created by"
+  createdAt: "Created on"
+  notifications: "Notifications"
+  notifyCompleted: "on completion"
+  notifyDeadline: "on deadline"
+
+  saveSuccess: "Work item successfully saved"
+  finishSuccess: "Work item successfully completed"
+  fetchError: "Error while loading work item"
+  saveError: "Error while saving the work item"
+
+  actions:
+    title: "Actions"
+    highlight: "Highlight"
+
+    markAsRead: "Mark as read"
+    markAsUnread: "Mark as unread"
+    assignToMe: "Assign to me"
+    edit: "Edit task"
+    finish: "Complete work item"
+
+  filters:
+    responsible: "Responsible"
+    status: "Status"
+    type: "Type"
+    role: "Role"
+    order: "Order"
+
+    all: "All"
+    own: "Own"
+    unread: "Unread"
+    open: "Open"
+    closed: "Closed"
+    active: "Active"
+    control: "Controlling"
+    urgent: "Urgent"
+    new: "New"
+
+  new:
+    title: "Create task"
+

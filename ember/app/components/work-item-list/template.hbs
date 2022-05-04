@@ -1,0 +1,17 @@
+<DynamicTable
+  @loading={{@query.isLoading}}
+  @data={{@query.value}}
+  @config={{@config}}
+  @loadMoreData={{this.fetchMore}}
+  @hasNextPage={{@query.hasNextPage}}
+/>
+
+<div class="uk-width-expand uk-flex uk-flex-middle uk-text-meta uk-margin">
+  {{
+    t
+    "global.paginationInfo"
+    count=@query.value.length
+    total=@query.totalCount
+    htmlSafe=true
+  }}
+</div>

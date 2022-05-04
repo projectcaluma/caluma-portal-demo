@@ -1,3 +1,3 @@
-{{#if @model}}
-  <CfContent @documentId={{@model.document.id}} />
+{{#if this.parent.case}}
+  <CfContent @documentId={{this.parent.case.document.id}} />
 {{/if}}

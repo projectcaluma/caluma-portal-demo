@@ -1,0 +1,23 @@
+<UkButton
+  @type="button"
+  @color="text"
+  @title={{t "global.openMenu"}}
+>
+  <span hidden>{{t "global.openMenu"}}</span>
+  <UkIcon @icon="more-vertical" />
+</UkButton>
+<div uk-dropdown>
+    <ul class="uk-list uk-margin-remove">
+      {{#each @actions as |action|}}
+        <li>
+          <UkButton
+            @type="button"
+            @color="text"
+            @onClick={{action.action}}
+          >
+            {{action.title}}
+          </UkButton>
+        </li>
+      {{/each}}
+    </ul>
+</div>

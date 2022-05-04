@@ -1,16 +1,14 @@
-query GetCases($caseId: ID!) {
-  allCases(filter: [{ rootCase: $caseId }]) {
+query getCaseQuery($filter: [CaseFilterSetType]) {
+  allCases(filter: $filter) {
     edges {
       node {
         id
+        status
         createdAt
         modifiedAt
-        closedAt
-        status
         document {
           id
           form {
-            slug
             name
             description
           }

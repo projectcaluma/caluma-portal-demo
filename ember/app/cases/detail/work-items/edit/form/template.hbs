@@ -1,0 +1,14 @@
+<h3>{{this.parent.workItem.name}}</h3>
+
+{{#if this.parent.getWorkItem.isRunning}}
+  <div class="uk-text-center uk-padding">
+    <UkSpinner @ratio={{2}} />
+  </div>
+{{else}}
+  <CfContent @documentId={{this.parent.workItem.document.id}}
+    @context={{hash
+      actionButtonOnSuccess=this.actionButtonOnSuccess
+    }}
+    @disabled={{not (eq this.parent.workItem.status "READY")}}
+  />
+{{/if}}

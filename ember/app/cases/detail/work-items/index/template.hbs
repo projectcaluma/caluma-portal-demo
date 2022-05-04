@@ -1,0 +1,18 @@
+<h3 class="uk-flex uk-flex-between">
+  {{t "workItems.title"}}
+</h3>
+
+<hr>
+
+<WorkItemList
+  @query={{this.readyWorkItemsQuery}}
+  @config={{this.readyTableConfig}}
+/>
+
+<h3>{{t "workItems.completedTitle"}}</h3>
+
+<WorkItemList
+  @query={{this.completedWorkItemsQuery}}
+  @config={{this.completedTableConfig}}
+
+/>

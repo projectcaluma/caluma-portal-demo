@@ -34,23 +34,23 @@ module.exports = function (environment) {
         orderOptions: [
           {
             value: "CREATED_AT_DESC",
-            label: "documents.createdAt",
-            direction: "documents.desc",
+            label: "cases.createdAt",
+            direction: "cases.desc",
           },
           {
             value: "CREATED_AT_ASC",
-            label: "documents.createdAt",
-            direction: "documents.asc",
+            label: "cases.createdAt",
+            direction: "cases.asc",
           },
           {
             value: "MODIFIED_AT_DESC",
-            label: "documents.modifiedAt",
-            direction: "documents.desc",
+            label: "cases.modifiedAt",
+            direction: "cases.desc",
           },
           {
             value: "MODIFIED_AT_ASC",
-            label: "documents.modifiedAt",
-            direction: "documents.asc",
+            label: "cases.modifiedAt",
+            direction: "cases.asc",
           },
         ],
       },
@@ -61,29 +61,29 @@ module.exports = function (environment) {
           {
             classList: [], // class list for td element
             heading: {
-              label: "documents.type",
+              label: "cases.type",
               classList: [], // class list for th element
             },
             modelKey: "document.form.name",
             linkTo: "cases.detail.index",
           },
           {
-            heading: { label: "documents.status" },
-            modelKey: "status",
+            heading: { label: "cases.status" },
+            modelKey: "raw.status",
             type: "case-status",
           },
           {
-            heading: { label: "documents.createdAt" },
+            heading: { label: "cases.createdAt" },
             modelKey: "createdAt",
             type: "date",
           },
           {
-            heading: { label: "documents.modifiedAt" },
+            heading: { label: "cases.modifiedAt" },
             modelKey: "modifiedAt",
             type: "date",
           },
           {
-            heading: { label: "documents.description" },
+            heading: { label: "cases.description" },
             modelKey: "document.form.description",
             truncate: true,
           },
