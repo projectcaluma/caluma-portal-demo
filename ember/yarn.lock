@@ -1303,21 +1303,10 @@
     ember-cli-htmlbars "^5.7.1"
     ember-destroyable-polyfill "^2.0.3"
 
-"@ember/test-waiters@^2.3.0":
-  version "2.4.5"
-  resolved "https://registry.yarnpkg.com/@ember/test-waiters/-/test-waiters-2.4.5.tgz#6e8e34d1bc46a9b0cc22cb11cc5936046e926031"
-  integrity sha512-833JvHtHdEfBfKXgvmw+6oziFOpVfD4NQrc04Ztj59A11K9FPNfZ3P8YydL7LFTtdd7UfJ/cYCLAm+OwUxbotQ==
-  dependencies:
-    calculate-cache-key-for-tree "^2.0.0"
-    ember-cli-babel "^7.26.6"
-    ember-cli-typescript "^4.1.0"
-    ember-cli-version-checker "^5.1.2"
-    semver "^7.3.5"
-
-"@ember/test-waiters@^3.0.0", "@ember/test-waiters@~3.0.0":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@ember/test-waiters/-/test-waiters-3.0.1.tgz#c3416dd6dcb0e3c0434e815e1de144d848ad74b1"
-  integrity sha512-LqV55mMiSuhAAWfbJdJf0bxHc22A/CiG8TKyZwpcSv4A1GJIpdlTvqHCrlcdV6T30+L0/uyj14upC3ayWmV0CQ==
+"@ember/test-waiters@^3.0.0", "@ember/test-waiters@~3.0.0", "@ember/test-waiters@~3.0.1":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@ember/test-waiters/-/test-waiters-3.0.2.tgz#5b950c580a1891ed1d4ee64f9c6bacf49a15ea6f"
+  integrity sha512-H8Q3Xy9rlqhDKnQpwt2pzAYDouww4TZIGSI1pZJhM7mQIGufQKuB0ijzn/yugA6Z+bNdjYp1HioP8Y4hn2zazQ==
   dependencies:
     calculate-cache-key-for-tree "^2.0.0"
     ember-cli-babel "^7.26.6"
@@ -6685,16 +6674,18 @@ ember-alexandria@1.2.0:
     ember-uikit "2.2.0"
     file-saver "^2.0.5"
 
-ember-apollo-client@3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/ember-apollo-client/-/ember-apollo-client-3.2.0.tgz#fea5f2ad285a65fa22dd2fc02a785f38dedd025a"
-  integrity sha512-wIlGpw6wrSUeJ6ONL2NH2/ld6mR6KB/KCoVt2vuTcvRl0FgEzJr/6IYxuR0xpuj2+PfpprVn1nrugpHukLDdBQ==
+ember-apollo-client@4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/ember-apollo-client/-/ember-apollo-client-4.1.0.tgz#00ea5c42c27f449bf9d52720feb25a6ce5e2d64f"
+  integrity sha512-yZNp65HIRtlrVtFBzJ7jNpMWSFG42inWLDPRQyU2iA2I126p6gaj09Szx7hoChxtn5hK9zdN77j5meq7RddSyg==
   dependencies:
-    "@apollo/client" "^3.2.1"
-    "@ember/test-waiters" "^2.3.0"
+    "@apollo/client" "^3.5.10"
+    "@ember/test-waiters" "~3.0.1"
+    "@embroider/macros" "^1.5.0"
+    "@glimmer/tracking" "^1.0.4"
     broccoli-graphql-filter "^1.0.0"
-    ember-auto-import "^1.6.0"
-    ember-cli-babel "^7.22.1"
+    ember-auto-import "^2.4.0"
+    ember-cli-babel "^7.26.11"
 
 ember-apollo-client@^3.2.0, ember-apollo-client@^3.2.1:
   version "3.2.1"
@@ -17170,12 +17161,7 @@ validate-peer-dependencies@^1.2.0:
     resolve-package-path "^3.1.0"
     semver "^7.3.2"
 
-validated-changeset@~1.1.2, validated-changeset@~1.1.3:
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/validated-changeset/-/validated-changeset-1.1.3.tgz#2f89cbf5c4f212ab6e5f2fecebf1df47d3b55ec6"
-  integrity sha512-yj+UOz1w7POS/4/No+NamkgLVcmuuP6ehjajVQlepOyHZo1p1/OXnvyjPXYYLIvEgRWaAoGb+dg0O9cPWHmH2Q==
-
-validated-changeset@~1.3.2:
+validated-changeset@1.3.2, validated-changeset@~1.1.2, validated-changeset@~1.1.3, validated-changeset@~1.3.2:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/validated-changeset/-/validated-changeset-1.3.2.tgz#ee1c308a8110af86c2c60a9211070e3e4a105a79"
   integrity sha512-uRBNUvXPRaewdH/NgIHPBy3BNVUyq9RV9e3BQ/Zkxx2uraCEM6E2boyyhl2kfcCVKEmvEUXE6yXReezKt1agtw==
