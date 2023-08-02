@@ -25,7 +25,7 @@ export default class App extends Application {
           ],
         },
       },
-      emberAlexandria: {
+      "ember-alexandria": {
         dependencies: {
           services: [
             { store: "alexandria-store" },
