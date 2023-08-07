@@ -7832,13 +7832,6 @@ ember-moment@^8.0.1:
     ember-getowner-polyfill "^2.2.0"
     ember-macro-helpers "^4.2.2"
 
-ember-parachute@1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/ember-parachute/-/ember-parachute-1.0.2.tgz#f147f6b29df100d467acc1ddf13761aef92e95de"
-  integrity sha512-wpTn179au/BE2+p4z9mQRh2Cy/a5J038oPpY2Buja3gDO/Qh64ny3klr4dxMRQ5GePniglkWK/LW3qitcs902A==
-  dependencies:
-    ember-cli-babel "^7.1.2"
-
 ember-pikaday@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/ember-pikaday/-/ember-pikaday-3.0.0.tgz#c80c215174cc103fd9324188e00e21f4fc00c9e0"

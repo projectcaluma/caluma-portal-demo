@@ -7,29 +7,15 @@ import getRootFormsQuery from "caluma-portal-demo/gql/queries/get-root-forms";
 import getWorkflowQuery from "caluma-portal-demo/gql/queries/get-workflow";
 import { queryManager } from "ember-apollo-client";
 import { task, lastValue } from "ember-concurrency";
-import QueryParams from "ember-parachute";
 
-const queryParams = new QueryParams({
-  selectedForm: {
-    defaultValue: "",
-    replace: true,
-  },
-});
-
-export default class CaseNewController extends Controller.extend(
-  queryParams.Mixin
-) {
+export default class CaseNewController extends Controller {
+  queryParams = ["selectedForm"];
   @queryManager apollo;
   @service router;
-  @tracked selectedForm;
-
-  setup() {
-    this.fetchForms.perform();
-  }
+  @tracked selectedForm = "";
 
   reset() {
-    this.resetQueryParams();
-    this.selectedForm = null;
+    this.selectedForm = "";
 
     this.fetchForms.cancelAll({ reset: true });
     this.createCase.cancelAll({ reset: true });

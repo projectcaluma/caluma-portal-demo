@@ -2,11 +2,8 @@ import Controller from "@ember/controller";
 import getCaseQuery from "caluma-portal-demo/gql/queries/get-case";
 import { queryManager } from "ember-apollo-client";
 import { task, lastValue } from "ember-concurrency";
-import QueryParams from "ember-parachute";
 
-export default class CasesDetailController extends Controller.extend(
-  new QueryParams().Mixin
-) {
+export default class CasesDetailController extends Controller {
   @queryManager apollo;
 
   setup() {
