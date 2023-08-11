@@ -6950,7 +6950,7 @@ ember-cli-babel@7.26.11, ember-cli-babel@^7.0.0, ember-cli-babel@^7.1.2, ember-c
     rimraf "^3.0.1"
     semver "^5.5.0"
 
-ember-cli-babel@^6.0.0-beta.4, ember-cli-babel@^6.16.0, ember-cli-babel@^6.3.0, ember-cli-babel@^6.6.0, ember-cli-babel@^6.7.2:
+ember-cli-babel@^6.0.0-beta.4, ember-cli-babel@^6.3.0, ember-cli-babel@^6.6.0, ember-cli-babel@^6.7.2:
   version "6.18.0"
   resolved "https://registry.yarnpkg.com/ember-cli-babel/-/ember-cli-babel-6.18.0.tgz#3f6435fd275172edeff2b634ee7b29ce74318957"
   integrity sha512-7ceC8joNYxY2wES16iIBlbPSxwKDBhYwC8drU3ZEvuPDMwVv1KzxCNu1fvxyFEBWhwaRNTUxSCsEVoTd9nosGA==
@@ -7857,12 +7857,13 @@ ember-power-select@5.0.4, ember-power-select@^5.0.4:
     ember-text-measurer "^0.6.0"
     ember-truth-helpers "^2.1.0 || ^3.0.0"
 
-ember-promise-helpers@1.0.9:
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/ember-promise-helpers/-/ember-promise-helpers-1.0.9.tgz#4559dd4a09be1a2725eddd7146169d2d53a92e7a"
-  integrity sha512-BDcx2X28baEL0YMKSmDGQzvdyfiFSlx4Byf34hVrAw6W7VO17YYLjeXPebVBOXLA1BMWmUo0Bb2pZRZ09MQYYA==
+ember-promise-helpers@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/ember-promise-helpers/-/ember-promise-helpers-2.0.0.tgz#73eed25c9e0f3e66ca4d19f2fb7f221b61abff1c"
+  integrity sha512-ZQlzSRjCdDgGBlXHtk+LKmxOlXWKalBBZrmYlr2X/kqNf7vaVUnlKQD1T+sRzwnsZZTQwL5PKfLmSWF3hFD69g==
   dependencies:
-    ember-cli-babel "^6.16.0"
+    ember-cli-babel "^7.26.6"
+    ember-cli-htmlbars "^5.7.1"
 
 ember-qunit@5.1.5:
   version "5.1.5"
@@ -17147,12 +17148,7 @@ validate-peer-dependencies@^1.2.0:
     resolve-package-path "^3.1.0"
     semver "^7.3.2"
 
-validated-changeset@~1.1.2, validated-changeset@~1.1.3:
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/validated-changeset/-/validated-changeset-1.1.3.tgz#2f89cbf5c4f212ab6e5f2fecebf1df47d3b55ec6"
-  integrity sha512-yj+UOz1w7POS/4/No+NamkgLVcmuuP6ehjajVQlepOyHZo1p1/OXnvyjPXYYLIvEgRWaAoGb+dg0O9cPWHmH2Q==
-
-validated-changeset@~1.3.2:
+validated-changeset@1.3.2, validated-changeset@~1.1.2, validated-changeset@~1.1.3, validated-changeset@~1.3.2:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/validated-changeset/-/validated-changeset-1.3.2.tgz#ee1c308a8110af86c2c60a9211070e3e4a105a79"
   integrity sha512-uRBNUvXPRaewdH/NgIHPBy3BNVUyq9RV9e3BQ/Zkxx2uraCEM6E2boyyhl2kfcCVKEmvEUXE6yXReezKt1agtw==
