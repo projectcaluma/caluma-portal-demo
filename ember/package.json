@@ -33,7 +33,7 @@
     "@glimmer/tracking": "1.0.4",
     "@projectcaluma/ember-core": "11.0.0-beta.5",
     "@projectcaluma/ember-form": "11.0.0-beta.12",
-    "@projectcaluma/ember-form-builder": "11.0.0-beta.10",
+    "@projectcaluma/ember-form-builder": "11.1.5",
     "@projectcaluma/ember-workflow": "11.0.0-beta.5",
     "babel-eslint": "10.1.0",
     "broccoli-asset-rev": "3.0.0",
