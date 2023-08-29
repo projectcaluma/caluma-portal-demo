@@ -21,14 +21,16 @@ export default class App extends Application {
             "intl",
             "notification",
             "router",
+            { "host-router": "router" },
             "emeis-options",
           ],
         },
       },
-      emberAlexandria: {
+      "ember-alexandria": {
         dependencies: {
           services: [
             { store: "alexandria-store" },
+            "session",
             "intl",
             "notification",
             "router",
