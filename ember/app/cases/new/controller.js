@@ -7,29 +7,19 @@ import getRootFormsQuery from "caluma-portal-demo/gql/queries/get-root-forms";
 import getWorkflowQuery from "caluma-portal-demo/gql/queries/get-workflow";
 import { queryManager } from "ember-apollo-client";
 import { task, lastValue } from "ember-concurrency";
-import QueryParams from "ember-parachute";
 
-const queryParams = new QueryParams({
-  selectedForm: {
-    defaultValue: "",
-    replace: true,
-  },
-});
-
-export default class CaseNewController extends Controller.extend(
-  queryParams.Mixin
-) {
+export default class CaseNewController extends Controller {
+  queryParams = ["selectedForm"];
   @queryManager apollo;
   @service router;
-  @tracked selectedForm;
+  @tracked selectedForm = "";
 
   setup() {
     this.fetchForms.perform();
   }
 
   reset() {
-    this.resetQueryParams();
-    this.selectedForm = null;
+    this.selectedForm = "";
 
     this.fetchForms.cancelAll({ reset: true });
     this.createCase.cancelAll({ reset: true });
@@ -40,7 +30,7 @@ export default class CaseNewController extends Controller.extend(
   *fetchForms() {
     return (yield this.apollo.query(
       { query: getRootFormsQuery, fetchPolicy: "network-only" },
-      "allForms.edges"
+      "allForms.edges",
     )).map(({ node }) => node);
   }
 
@@ -48,7 +38,7 @@ export default class CaseNewController extends Controller.extend(
   *createCase() {
     const workflow = (yield this.apollo.query(
       { query: getWorkflowQuery },
-      "allWorkflows.edges"
+      "allWorkflows.edges",
     )).map(({ node }) => node)[0];
 
     const newCase = yield this.apollo.mutate({
@@ -57,7 +47,7 @@ export default class CaseNewController extends Controller.extend(
     });
     this.router.transitionTo(
       "cases.detail.index",
-      decodeId(newCase.saveCase.case.id)
+      decodeId(newCase.saveCase.case.id),
     );
   }
 }
