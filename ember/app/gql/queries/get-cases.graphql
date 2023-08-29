@@ -1,8 +1,8 @@
-query GetCases($cursor: String, $forms: [String], $orderBy: [CaseOrdering]!) {
+query GetCases($cursor: String, $forms: [String], $order: [CaseOrderSetType]!) {
   allCases(
     first: 15
     after: $cursor
-    orderBy: $orderBy
+    order: $order
     filter: [{ documentForms: $forms }]
   ) {
     pageInfo {
