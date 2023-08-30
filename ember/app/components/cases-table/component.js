@@ -27,7 +27,6 @@ export default class CasesTableComponent extends Component {
     );
   }
 
-
   @action
   setup() {
     this.cases = [];
@@ -36,7 +35,9 @@ export default class CasesTableComponent extends Component {
 
   @restartableTask
   *fetchCases(cursor = null) {
-    const order = (this.args.order || ENV.APP.casesTable.defaultOrder).split("_");
+    const order = (this.args.order || ENV.APP.casesTable.defaultOrder).split(
+      "_",
+    );
     const direction = order.pop().toUpperCase();
     const attribute = order.join("_").toUpperCase();
     try {
