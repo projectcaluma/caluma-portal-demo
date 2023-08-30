@@ -17326,10 +17326,20 @@ validate-peer-dependencies@^2.2.0:
     resolve-package-path "^4.0.3"
     semver "^7.3.8"
 
-validated-changeset@1.3.2, validated-changeset@~1.3.2, validated-changeset@~1.3.4:
+validated-changeset@~1.3.2:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/validated-changeset/-/validated-changeset-1.3.2.tgz#ee1c308a8110af86c2c60a9211070e3e4a105a79"
   integrity sha512-uRBNUvXPRaewdH/NgIHPBy3BNVUyq9RV9e3BQ/Zkxx2uraCEM6E2boyyhl2kfcCVKEmvEUXE6yXReezKt1agtw==
+  dependencies:
+    "@types/ungap__structured-clone" "^0.3.0"
+    "@ungap/structured-clone" "^0.3.4"
+    i "^0.3.7"
+    npm "^8.7.0"
+
+validated-changeset@~1.3.4:
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/validated-changeset/-/validated-changeset-1.3.4.tgz#5fbaaa484a1eec79c65f920bc1d26c20103bc2d5"
+  integrity sha512-kodJCCnd3oA7sCtUkkl7olhB1MQUz2uTAYUnE38R4Dn8hIU4bZVWass8KPGt0fvu2WdkjFJOGpXDrT0isqNKqw==
   dependencies:
     "@types/ungap__structured-clone" "^0.3.0"
     "@ungap/structured-clone" "^0.3.4"
