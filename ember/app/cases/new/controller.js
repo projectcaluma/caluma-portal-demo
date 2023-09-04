@@ -14,17 +14,6 @@ export default class CaseNewController extends Controller {
   @service router;
   @tracked selectedForm = "";
 
-  setup() {
-    this.fetchForms.perform();
-  }
-
-  reset() {
-    this.selectedForm = "";
-
-    this.fetchForms.cancelAll({ reset: true });
-    this.createCase.cancelAll({ reset: true });
-  }
-
   @lastValue("fetchForms") forms;
   @task
   *fetchForms() {
