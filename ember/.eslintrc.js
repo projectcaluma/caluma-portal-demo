@@ -1,7 +1,6 @@
 "use strict";
 
 module.exports = {
-  extends: "@adfinis/eslint-config/ember-app",
   root: true,
   parser: "@babel/eslint-parser",
   parserOptions: {
@@ -19,6 +18,7 @@ module.exports = {
     "eslint:recommended",
     "plugin:ember/recommended",
     "plugin:prettier/recommended",
+    "@adfinis/eslint-config/ember-app",
   ],
   env: {
     browser: true,
