@@ -20,6 +20,7 @@
 
     & a {
       @extend .uk-flex, .uk-flex-middle;
+
       padding: 0;
       height: calc(100% - 2px);
     }
