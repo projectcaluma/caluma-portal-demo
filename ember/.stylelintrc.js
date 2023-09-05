@@ -1,9 +1,8 @@
 "use strict";
 
 module.exports = {
-  extends: ["stylelint-config-standard", "stylelint-prettier/recommended"],
+  extends: ["stylelint-config-standard-scss", "stylelint-prettier/recommended"],
   rules: {
-    "import-notation": null,
-    "at-rule-no-unknown": null,
+    "scss/at-extend-no-missing-placeholder": null,
   },
 };
