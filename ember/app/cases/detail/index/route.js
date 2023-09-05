@@ -15,7 +15,7 @@ export default class CasesDetailRoute extends Route {
         query: getCaseQuery,
         variables: { caseId: model },
       },
-      "allCases.edges"
+      "allCases.edges",
     );
     return caseRecord.map(({ node }) => node)[0];
   }

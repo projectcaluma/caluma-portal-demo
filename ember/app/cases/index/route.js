@@ -1,6 +1,12 @@
 import Route from "@ember/routing/route";
 
 export default class CasesRoute extends Route {
+  queryParams = {
+    order: {
+      refreshModel: true,
+      replace: true,
+    },
+  };
   model() {
     return [
       {

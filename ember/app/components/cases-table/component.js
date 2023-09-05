@@ -11,7 +11,6 @@ export default class CasesTableComponent extends Component {
 
   @tracked cases = [];
   @tracked types = [];
-  @tracked order;
 
   get pageInfo() {
     return this.fetchCases.lastSuccessful?.value.pageInfo;
@@ -28,11 +27,6 @@ export default class CasesTableComponent extends Component {
     );
   }
 
-  constructor(...args) {
-    super(...args);
-    this.order = this.args.order || ENV.APP.casesTable.defaultOrder;
-  }
-
   @action
   setup() {
     this.cases = [];
@@ -41,18 +35,23 @@ export default class CasesTableComponent extends Component {
 
   @restartableTask
   *fetchCases(cursor = null) {
+    const order = (this.args.order || ENV.APP.casesTable.defaultOrder).split(
+      "_",
+    );
+    const direction = order.pop().toUpperCase();
+    const attribute = order.join("_").toUpperCase();
     try {
       const raw = yield this.apollo.query(
         {
           query: getCasesQuery,
           variables: {
             cursor,
-            orderBy: this.order,
+            order: [{ attribute, direction }],
           },
 
           fetchPolicy: "network-only",
         },
-        "allCases"
+        "allCases",
       );
       const cases = raw.edges.map(({ node }) => node);
 

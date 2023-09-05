@@ -21,7 +21,7 @@ services:
       - dbdata:/var/lib/postgresql/data
 
   emeis:
-    image: ghcr.io/projectcaluma/emeis:1.0.5
+    image: ghcr.io/projectcaluma/emeis:1.2.2
     depends_on:
       - db
     environment:
@@ -37,7 +37,7 @@ services:
       - PERMISSION_CLASSES=
 
   alexandria:
-    image: projectcaluma/alexandria:version-0.2.1
+    image: ghcr.io/projectcaluma/alexandria:2.2.0
     volumes:
         - "./config/alexandria/initial_data.json:/app/initial_data.json"
     depends_on:
@@ -85,7 +85,7 @@ services:
       - minio
 
   caluma:
-    image: ghcr.io/projectcaluma/caluma:7.15.2
+    image: ghcr.io/projectcaluma/caluma:9.3.0
     depends_on:
       - db
     environment:

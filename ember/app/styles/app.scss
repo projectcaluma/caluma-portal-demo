@@ -1,7 +1,5 @@
 $app-accent-color: #2dc175;
-
 $global-primary-background: $app-accent-color;
-
 $modal-z-index: 1;
 
 @import "ember-alexandria";
@@ -10,7 +8,6 @@ $modal-z-index: 1;
 @import "ember-uikit";
 @import "@projectcaluma/ember-form";
 @import "@projectcaluma/ember-form-builder";
-
 @import "components/nav-bar";
 
 main {
