@@ -19,6 +19,7 @@
     }
 
     & a {
+      /* stylelint-disable-next-line scss/at-extend-no-missing-placeholder */
       @extend .uk-flex, .uk-flex-middle;
 
       padding: 0;
