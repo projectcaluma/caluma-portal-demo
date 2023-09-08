@@ -36,5 +36,5 @@ jobs:
       with:
         context: ./ember
         file: ./ember/Dockerfile
-        tags: projectcaluma/caluma-portal-demo:latest
+        tags: ghcr.io/projectcaluma/caluma-portal-demo:latest
         push: true
