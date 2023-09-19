@@ -1,12 +1,13 @@
 .nav-bar {
   border-bottom: solid 1px $global-border;
+  padding-bottom: 25px;
   padding-left: 15px;
 
   & img.nav-bar-logo {
     height: 50px;
   }
 
-  & [uk-tab] {
+  .uk-tab {
     margin: 0;
 
     &::before {
@@ -16,6 +17,9 @@
     &,
     & li {
       height: 100%;
+      a {
+        font-size: large;
+      }
     }
 
     & a {
@@ -27,6 +31,7 @@
     }
 
     & .uk-active > a {
+      padding-bottom: 25px;
       border-bottom: solid 2px $app-accent-color;
     }
   }
