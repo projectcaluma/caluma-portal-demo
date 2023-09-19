@@ -18,7 +18,7 @@ module.exports = function (environment) {
       // Here you can pass flags/options to your application document
       // when it is created
       navBarLogo: "/assets/nav-bar-logo.png",
-      navBarText: "Caluma Building Permit Demo",
+      navBarText: "Caluma Portal Demo",
 
       caseStateIcons: {
         RUNNING: "clock",
