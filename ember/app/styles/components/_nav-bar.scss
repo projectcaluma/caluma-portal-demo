@@ -14,20 +14,21 @@
       border-bottom: none;
     }
 
-    &,
-    & li {
-      height: 100%;
-      a {
-        font-size: large;
-      }
-    }
-
     & a {
       /* stylelint-disable-next-line scss/at-extend-no-missing-placeholder */
       @extend .uk-flex, .uk-flex-middle;
 
       padding: 0;
       height: calc(100% - 2px);
+    }
+
+    &,
+    & li {
+      height: 100%;
+
+      a {
+        font-size: large;
+      }
     }
 
     & .uk-active > a {
