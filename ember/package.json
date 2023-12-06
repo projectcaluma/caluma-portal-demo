@@ -43,7 +43,7 @@
     "@projectcaluma/ember-form-builder": "12.3.0",
     "broccoli-asset-rev": "3.0.0",
     "concurrently": "^8.0.1",
-    "ember-alexandria": "4.0.6",
+    "ember-alexandria": "4.8.0",
     "ember-apollo-client": "4.1.1",
     "ember-auto-import": "2.6.3",
     "ember-can": "4.1.0",
