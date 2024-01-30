@@ -40,7 +40,7 @@
     "@glimmer/tracking": "1.1.2",
     "@projectcaluma/ember-core": "12.3.0",
     "@projectcaluma/ember-form": "12.3.1",
-    "@projectcaluma/ember-form-builder": "12.3.0",
+    "@projectcaluma/ember-form-builder": "12.9.0",
     "broccoli-asset-rev": "3.0.0",
     "concurrently": "^8.0.1",
     "ember-alexandria": "4.0.6",
