@@ -1,12 +1,4 @@
 <nav class="uk-navbar-container uk-navbar-transparent nav-bar" uk-navbar>
-  <LinkTo @route="application" class="uk-navbar-item uk-logo uk-text-primary">
-    {{#if @logo}}
-      <img class="nav-bar-logo" src={{@logo}} alt={{@text}} />
-    {{else}}
-      {{@text}}
-    {{/if}}
-  </LinkTo>
-
   <UkTab as |tab|>
     <tab.item @href="/">{{t "nav.documents"}}</tab.item>
     <tab.item @href="/form-builder">{{t "nav.form-builder"}}</tab.item>
