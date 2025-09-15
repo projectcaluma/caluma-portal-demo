@@ -7,11 +7,15 @@ This includes the following use-cases:
 - Fill out a form
 
 ## Setup
-To start the project you can run `docker-compose up`
+To start the project you can run `docker compose up`.
 To load some example data you can run `make loaddata`.
 
 If you get exceptions from `make loaddata` make sure that the caluma container
 is running *and* has all migrations finished.
+
+> [!NOTE]
+> This Project uses Docker Compose v2, which uses the `docker compose` command instead of `docker-compose`. If you have Docker Compose v1 installed it is strongly recommended to upgrade to v2, but if for some reason this isn't possible you can just change the command in the Makefile.
+
 
 To start the ember development server, use:
 ```bash
