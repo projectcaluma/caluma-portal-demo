@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: checkout branch
-      uses: actions/checkout@v2
+      uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5 # v2.7.0
 
     - name: Install dependencies
       run: yarn install
@@ -22,17 +22,17 @@ jobs:
       working-directory: ${{env.ember-dir}}
 
     - name: Login to GitHub Container Registry
-      uses: docker/login-action@v2
+      uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc # v2.2.0
       with:
         registry: ghcr.io
         username: ${{ github.repository_owner }}
         password: ${{ secrets.GITHUB_TOKEN }}
     
     - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v1
+      uses: docker/setup-buildx-action@f211e3e9ded2d9377c8cadc4489a4e38014bc4c9 # v1.7.0
 
     - name: Publish to Docker Hub
-      uses: docker/build-push-action@v2.2.0
+      uses: docker/build-push-action@6925f94b6b8f23d547930f88b9886036ac92d510 # v2.2.0
       with:
         context: ./ember
         file: ./ember/Dockerfile
